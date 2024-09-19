@@ -1,0 +1,1689 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 0.4in
+\topmargin 0.75in
+\rightmargin 0.4in
+\bottommargin 0.5in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Lecture 2
+\end_layout
+
+\begin_layout Standard
+Today we will talk about classification of differential equations.
+\end_layout
+
+\begin_layout Section*
+Checklist
+\end_layout
+
+\begin_layout Standard
+As we classify differential equations and systems of differential equations,
+ we have a 
+\begin_inset Quotes eld
+\end_inset
+
+checklist
+\begin_inset Quotes erd
+\end_inset
+
+ of possible properties to test for.
+ This list is not all of the possible properties, but for our purposes,
+ it is large enough.
+ Let's define each of these properties and give examples.
+\end_layout
+
+\begin_layout Subsection*
+System/Equation
+\end_layout
+
+\begin_layout Standard
+If the equation is a single differential equation, it is an equation.
+ It is also possible to have systems of differential equations.
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 1)
+\end_layout
+
+\begin_layout Standard
+This is an equation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}+2x=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 2)
+\end_layout
+
+\begin_layout Standard
+This is an equation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d^{2}y}{dx^{2}}+2x\frac{dy}{dx}=\sin\left(y\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 3)
+\end_layout
+
+\begin_layout Standard
+This is a system.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+\frac{dy}{dt}=2x\\
+\frac{dx}{dt}=2y
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 4)
+\end_layout
+
+\begin_layout Standard
+This is a system.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+\frac{d^{2}y}{dt^{2}}=\frac{dx}{dt}\\
+\frac{d^{2}x}{dt^{2}}=\frac{dy}{dt}+3xy
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+ODE/PDE
+\end_layout
+
+\begin_layout Standard
+An Ordinary Differential Equation (ODE) is a differential equation that
+ only contains ordinary derivatives.
+ A PDE (Partial Differential Equation) is a differential equation that contains
+ partial derivatives.
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 1)
+\end_layout
+
+\begin_layout Standard
+This is an ODE.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}+2x=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 2)
+\end_layout
+
+\begin_layout Standard
+This is an ODE.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d^{2}y}{dx^{2}}+2x\frac{dy}{dx}=\sin\left(y\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 3)
+\end_layout
+
+\begin_layout Standard
+This is a PDE.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial y}{\partial t}+\frac{\partial y}{\partial x}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 4)
+\end_layout
+
+\begin_layout Standard
+This is a PDE.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial^{2}u}{\partial t^{2}}=\frac{\partial^{2}u}{\partial x^{2}}-\frac{\partial^{2}u}{\partial y^{2}}+\frac{\partial^{3}u}{\partial x\partial y\partial t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Order
+\end_layout
+
+\begin_layout Standard
+The order of a differential equation/system is the highest order derivative
+ taken in the differential equation.
+ We only care about the term with the highest number of derivatives.
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 1)
+\end_layout
+
+\begin_layout Standard
+This is first order.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}+2x=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 2)
+\end_layout
+
+\begin_layout Standard
+This is a second order.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d^{2}y}{dx^{2}}+2x\frac{dy}{dx}=\sin\left(y\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 3)
+\end_layout
+
+\begin_layout Standard
+This is first order.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial y}{\partial t}+\frac{\partial y}{\partial x}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 4)
+\end_layout
+
+\begin_layout Standard
+This is third order, as the last term has 
+\begin_inset Formula $3$
+\end_inset
+
+ partial derivatives (even though they are split between multiple independent
+ variables).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial^{2}u}{\partial t^{2}}=\frac{\partial^{2}u}{\partial x^{2}}-\frac{\partial^{2}u}{\partial y^{2}}+\frac{\partial^{3}u}{\partial x\partial y\partial t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Autonomous
+\end_layout
+
+\begin_layout Standard
+An ODE is autonomous if it has no explicit dependence on the independent
+ variable.
+ Below are some examples and non-examples.
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 1)
+\end_layout
+
+\begin_layout Standard
+This equation is autonomous.
+ The independent variable only appears in the expression for the derivative.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}+y=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 2)
+\end_layout
+
+\begin_layout Standard
+This equation is autonomous.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d^{2}y}{dt^{2}}+3y\frac{dy}{dt}=\sin\left(y^{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 3)
+\end_layout
+
+\begin_layout Standard
+This equation is not autonomous since 
+\begin_inset Formula $x$
+\end_inset
+
+ appears explicitly.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}+xy=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 4)
+\end_layout
+
+\begin_layout Standard
+This equation is not autonomous since 
+\begin_inset Formula $x$
+\end_inset
+
+ appears explicitly.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d^{2}y}{dx^{2}}+2\frac{dy}{dx}=x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Linear/Non-Linear
+\end_layout
+
+\begin_layout Standard
+An ordinary differential equation is said to be linear if it can be written
+ in the following form:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{n}\left(x\right)\frac{d^{n}y}{dx^{n}}+f_{n-1}\left(x\right)\frac{d^{n-1}y}{dx^{n}}+\dots+f_{0}\left(x\right)y=g\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where each 
+\begin_inset Formula $f_{i}\left(x\right)$
+\end_inset
+
+ is a function of 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $g\left(x\right)$
+\end_inset
+
+ is a function of 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 1)
+\end_layout
+
+\begin_layout Standard
+This equation is linear, as it is in the right form (note some of the 
+\begin_inset Formula $f_{i}\left(x\right)$
+\end_inset
+
+ could be 
+\begin_inset Formula $0$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(x^{2}-4\right)\frac{d^{2}y}{dx^{2}}+\cos\left(x\right)y=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 2)
+\end_layout
+
+\begin_layout Standard
+This equation is linear (but we will have to rearrange the equation to show
+ this).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ln\left(\frac{dy}{dx}\right)=x^{2}+1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Take 
+\begin_inset Formula $e$
+\end_inset
+
+ to the power of both sides:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+e^{\ln\left(\frac{dy}{dx}\right)}=e^{x^{2}+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=e^{x^{2}+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 3)
+\end_layout
+
+\begin_layout Standard
+This equation is non-linear as we have a 
+\begin_inset Formula $y\frac{dy}{dx}$
+\end_inset
+
+ term.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\frac{dy}{dx}+y=\sin\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 4)
+\end_layout
+
+\begin_layout Standard
+This equation is non-linear.
+ It is not possible to remove the power of 
+\begin_inset Formula $y$
+\end_inset
+
+ by algebraic manipulation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}+y^{2}=2x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Homogeneous/Non-Homogeneous
+\end_layout
+
+\begin_layout Standard
+Any linear ODE with 
+\begin_inset Formula $g\left(x\right)=0$
+\end_inset
+
+ is said to be homogeneous.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 1)
+\end_layout
+
+\begin_layout Standard
+This equation is homogeneous.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(x^{2}-4\right)\frac{d^{2}y}{dx^{2}}+\cos\left(x\right)y=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 2)
+\end_layout
+
+\begin_layout Standard
+This equation is not homogeneous.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=e^{x^{2}+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 3)
+\end_layout
+
+\begin_layout Standard
+Sometimes you might have to rearrange the equation to check for homogeneity.
+ The equation below is not homogeneous.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}+2x-y=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we rearrange into the proper form, we see:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}-y=-2x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Constant Coefficient
+\end_layout
+
+\begin_layout Standard
+A linear differential equation is said to be constant coefficient if every
+ 
+\begin_inset Formula $f_{i}\left(x\right)$
+\end_inset
+
+ is constant.
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 1)
+\end_layout
+
+\begin_layout Standard
+This equation is constant coefficient.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d^{2}y}{dx^{2}}+4\frac{dy}{dx}+3y=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 2)
+\end_layout
+
+\begin_layout Standard
+This equation is constant coefficient.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=e^{x^{2}+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 3)
+\end_layout
+
+\begin_layout Standard
+This equation is not constant coefficient.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(x^{2}-4\right)\frac{d^{2}y}{dx^{2}}+\cos\left(x\right)y=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 4)
+\end_layout
+
+\begin_layout Standard
+Sometimes you have to rearrange an equation to show it is constant coefficient.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+e^{-x}\frac{dy}{dx}=3x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Multiply both sides by 
+\begin_inset Formula $e^{-x}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=3xe^{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Classification Examples
+\end_layout
+
+\begin_layout Standard
+We will do a few examples of full classifications.
+ After this, we will classify many famous differential equations (Note,
+ some of the later examples will be messier than what is expected for the
+ homework, but you might see these differential equations in later classes,
+ depending on your major).
+\end_layout
+
+\begin_layout Subsection*
+Some Examples
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 1)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=y+x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is an ordinary 
+\begin_inset Formula $1$
+\end_inset
+
+st order linear non-homogeneous constant coefficient equation, as we can
+ rearrange the equation to the form below.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}-y=x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 2)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+\frac{d^{2}y}{dt}+y-tx=0\\
+\frac{dx}{dt}-tx+3y=0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is an ordinary 
+\begin_inset Formula $2$
+\end_inset
+
+nd order homogeneous linear system of equations.
+ It is not constant coefficient due to the 
+\begin_inset Formula $tx$
+\end_inset
+
+ term.
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 3)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial^{3}y}{\partial x_{1}\partial x_{2}^{2}}=y-x_{1}^{2}+x_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is a 
+\begin_inset Formula $3$
+\end_inset
+
+rd order linear PDE.
+ It is linear as the only 
+\begin_inset Formula $y$
+\end_inset
+
+ terms (dependent variable terms) are in derivatives (without any products
+ of derivatives of 
+\begin_inset Formula $y$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 4)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}+y^{3}-2y=e^{y}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is a 
+\begin_inset Formula $1$
+\end_inset
+
+st order non-linear Autonomous ODE.
+ It is non-linear as we have a 
+\begin_inset Formula $y^{3}$
+\end_inset
+
+ term that we cannot simplify.
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 5)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+4dx=5dy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can rearrange this equation by bringing the 
+\begin_inset Formula $dx$
+\end_inset
+
+ to the right side.
+ This is not the same as division, but the algebra is very similar to division.
+ This gives the equivalent equation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=\frac{4}{5}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As such, the equation is a constant coefficient non-homogeneous linear 
+\begin_inset Formula $1$
+\end_inset
+
+st order homogeneous ODE.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 6)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial u}{\partial x}+\frac{\partial u}{\partial t}=u^{2}-tx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is a non-linear 
+\begin_inset Formula $1$
+\end_inset
+
+st order PDE.
+\end_layout
+
+\begin_layout Subsection*
+Some Famous Equations
+\end_layout
+
+\begin_layout Standard
+Below we are going to classify a lot of famous differential equations.
+ Solving some of these is outside of the scope of the class, but hopefully
+ these examples will illustrate the wide variety of uses of differential
+ equations.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 1) Heat Equation
+\end_layout
+
+\begin_layout Standard
+This equation describes the temperature in a surface over time.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial u}{\partial t}=\frac{\partial^{2}u}{\partial x^{2}}+\frac{\partial^{2}u}{\partial y^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is a 
+\begin_inset Formula $2$
+\end_inset
+
+nd order linear PDE.
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 2) Bernoulli Differential Equation
+\end_layout
+
+\begin_layout Standard
+This is a special class of differential equations we will learn to solve
+ in this course.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y'+p\left(x\right)y=q\left(x\right)y^{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Unless 
+\begin_inset Formula $n=0,1$
+\end_inset
+
+, then this equation is non-linear.
+ Regardless of the 
+\begin_inset Formula $n$
+\end_inset
+
+ value, this is an ordinary 
+\begin_inset Formula $1$
+\end_inset
+
+st order differential equation.
+ It is only autonomous in the special case where 
+\begin_inset Formula $p\left(x\right),q\left(x\right)$
+\end_inset
+
+ are both constants.
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 3) Velocity and Acceleration
+\end_layout
+
+\begin_layout Standard
+You might have seen these in a physics course before.
+ The velocity and acceleration of an object describe its motion.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+v=\frac{dr}{dt}\\
+a=\frac{dv}{dt}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is a 
+\begin_inset Formula $1$
+\end_inset
+
+st order linear constant coefficient system of ODES.
+ If velocity and acceleration are functions of time, we cannot assume the
+ systems are autonomous.
+ If 
+\begin_inset Formula $v,a$
+\end_inset
+
+ are both constants, then we have autonomous linear equations.
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 4) Newton's Second Law of Motion
+\end_layout
+
+\begin_layout Standard
+This describes the relationship between force and acceleration of an object.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F=\frac{d}{dt}\left(m\frac{dx}{dt}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $m$
+\end_inset
+
+ is a constant, we can pull it out.
+ If mass is a function of time, we can rewrite this equation using product
+ rule.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F=m'\frac{dx}{dt}+m\frac{d^{2}x}{dt^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $F$
+\end_inset
+
+ is only a function of time, this gives a second order linear non-homogeneous
+ ODE (that is not constant coefficient in general).
+ If 
+\begin_inset Formula $F$
+\end_inset
+
+ is a function of both 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $t$
+\end_inset
+
+, then this equation may be non-linear.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 5) Wave Equation
+\end_layout
+
+\begin_layout Standard
+This equation describes waves passing through 
+\begin_inset Formula $3$
+\end_inset
+
+D space.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial^{2}u}{\partial t^{2}}=k^{2}\left(\frac{\partial^{2}u}{\partial x^{2}}+\frac{\partial^{2}u}{\partial y^{2}}+\frac{\partial^{2}u}{\partial z^{2}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is a second order linear constant coefficient homogeneous PDE.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 6) Friedmann Equations
+\end_layout
+
+\begin_layout Standard
+These equations give a model for the expansion of the universe within cosmology.
+ In the simplest model (which we will assume below), every variable except
+ 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $t$
+\end_inset
+
+ is a constant.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+\frac{\left(\frac{da}{dt}\right)^{2}+kc^{2}}{a^{2}}=\frac{8\pi G\rho+\Lambda c^{2}}{3}\\
+\frac{\left(\frac{d^{2}a}{dt^{2}}\right)}{a}=-\frac{4\pi G}{3}\left(\rho+\frac{3P}{c^{2}}\right)+\frac{\Lambda c^{2}}{3}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is a second order autonomous non-linear system of ODEs.
+ The non-linearity comes from the top equation in its current form.
+ Even though the bottom equation is linear (and can be shown by multiplying
+ through by 
+\begin_inset Formula $a$
+\end_inset
+
+), the top equation is non-linear.
+ This make the entire system non-linear.
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 7) Radioactive Decay
+\end_layout
+
+\begin_layout Standard
+A radioactive isotope will lose some proportion of its mass with time.
+ The equation below describes this.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+-\dfrac{dN}{N}=\lambda dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can rearrange this to get
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dN}{dt}=-\lambda N
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dN}{dt}+\lambda N=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is a linear constant coefficient homogeneous 
+\begin_inset Formula $1$
+\end_inset
+
+st order autonomous ODE.
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 8) RLC Circuit
+\end_layout
+
+\begin_layout Standard
+A circuit with resistors (R), inductors (L), and capacitors (C) is a RLC
+ circuit.
+ It is governed by the equation below.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d^{2}I}{dt^{2}}+\frac{R}{L}\frac{dI}{dt}+\frac{I}{LC}=f\left(t\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As the resistance, inductance, and capacitance (
+\begin_inset Formula $R$
+\end_inset
+
+,
+\begin_inset Formula $L$
+\end_inset
+
+,
+\begin_inset Formula $C$
+\end_inset
+
+ respectively) are assumed to be constant, then this is a constant coefficient
+ 
+\begin_inset Formula $2$
+\end_inset
+
+nd order linear non-homogeneous ODE.
+ It is not autonomous as there is a 
+\begin_inset Formula $f\left(t\right)$
+\end_inset
+
+ on the right side (which is not constant in general).
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 9) Euler-Bernoulli Beam Equation
+\end_layout
+
+\begin_layout Standard
+This equation describes the deflection of a beam as a function of position,
+ given the elastic modulus 
+\begin_inset Formula $E$
+\end_inset
+
+, 
+\begin_inset Formula $2$
+\end_inset
+
+nd moment of area 
+\begin_inset Formula $I$
+\end_inset
+
+, and the distributed load 
+\begin_inset Formula $q$
+\end_inset
+
+.
+ In nicer forms, 
+\begin_inset Formula $E,I$
+\end_inset
+
+ are constant.
+ In the most general form given below, we assume 
+\begin_inset Formula $E,I$
+\end_inset
+
+ are functions of 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d^{2}}{dx^{2}}\left(E\left(x\right)I\left[x\right]\frac{d^{2}w}{dx^{2}}\right)=q\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we use product rule, we get
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d}{dx}\left(E'\left(x\right)I'\left(x\right)\frac{d^{2}w}{dx^{2}}+E\left(x\right)I\left(x\right)\frac{d^{3}w}{dx^{3}}\right)=q\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E''\left(x\right)I''\left(x\right)\frac{d^{2}w}{dx^{2}}+E'\left(x\right)I'\left(x\right)\frac{d^{3}w}{dx^{3}}+E'\left(x\right)I'\left(x\right)\frac{d^{3}w}{dx^{3}}+E\left(x\right)I\left(x\right)\frac{d^{4}w}{dx^{4}}=q\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E''\left(x\right)I''\left(x\right)\frac{d^{2}w}{dx^{2}}+2E'\left(x\right)I'\left(x\right)\frac{d^{3}w}{dx^{3}}+E\left(x\right)I\left(x\right)\frac{d^{4}w}{dx^{4}}=q\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is a fourth order linear non-homogeneous ODE.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 10) Rate Equation
+\end_layout
+
+\begin_layout Standard
+In chemistry, 
+\begin_inset Formula $\left[A\right]$
+\end_inset
+
+ represents the concentration of molecule 
+\begin_inset Formula $A$
+\end_inset
+
+ as a function of time.
+ The rate equation describes how the concentration of various molecules
+ in a reaction change.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{-d\left[R\right]}{dt}=k\left[A\right]^{x}\left[B\right]^{y}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $x,y$
+\end_inset
+
+ are the partial reaction orders (we can treat them as constants).
+ This equation is a linear non-homogeneous 
+\begin_inset Formula $1$
+\end_inset
+
+st order constant coefficient ODE.
+ It is not homogeneous as 
+\begin_inset Formula $\left[A\right],\left[B\right]$
+\end_inset
+
+ are both functions of time.
+ The notation is a little unusual, but this is due to the chemistry conventions.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 11) Logistic Equation
+\end_layout
+
+\begin_layout Standard
+This equation models the population of a given species of animal as a function
+ of time.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dP}{dt}=P\left(1-P\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is a first order non-linear autonomous ODE.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 12) Lotka-Volterra Equations
+\end_layout
+
+\begin_layout Standard
+This system of equations models the population of a predator and prey in
+ a biological system.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+\frac{dx}{dt}=\alpha x-\beta xy\\
+\frac{dy}{dt}=-\gamma y+\delta xy
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is a nonlinear first order system of ODEs.
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 13) SIR Model
+\end_layout
+
+\begin_layout Standard
+The Susceptible, Infected, Recovered (SIR) Model is used in epidemiology
+ to model the proportion of the population in various stages of an illness.
+ It was used recently with modeling COVID.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+\frac{dS}{dt}=-\beta IS\\
+\frac{dI}{dt}=\beta IS-\gamma I\\
+\frac{dR}{dt}=\gamma I
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is a first order non-linear system of ODEs.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 14) Black-Scholes Equation
+\end_layout
+
+\begin_layout Standard
+This equation models the prices of European Options.
+ This equation led to a revolution in quantitative finance in the 70s.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial V}{\partial t}+\frac{1}{2}\sigma^{2}s^{2}\frac{\partial^{2}V}{\partial s^{2}}=rv-rs\frac{\partial v}{\partial s}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is a second order linear non-homogeneous PDE.
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 15) Solow-Swan Model
+\end_layout
+
+\begin_layout Standard
+The Solow-Swan Model models economic growth.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dk}{dt}=sk^{\alpha}-\delta k
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This equation is non-linear (for all 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ except 
+\begin_inset Formula $\alpha=0,1$
+\end_inset
+
+).
+ It is a 
+\begin_inset Formula $1$
+\end_inset
+
+st order ODE.
+ 
+\end_layout
+
+\end_body
+\end_document

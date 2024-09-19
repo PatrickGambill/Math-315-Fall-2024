@@ -1,0 +1,1180 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 0.4in
+\topmargin 0.75in
+\rightmargin 0.4in
+\bottommargin 0.5in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Lecture 5
+\end_layout
+
+\begin_layout Standard
+A first order linear differential equation is a differential equation of
+ the following form:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y'+p\left(x\right)y=q\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is equivalent to the definition given in the classification lecture
+ as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{1}\left(x\right)y'+f_{0}\left(x\right)y=g\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+can be divided by 
+\begin_inset Formula $f_{1}\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y'+\frac{f_{0}\left(x\right)}{f_{1}\left(x\right)}y=\frac{g\left(x\right)}{f_{1}\left(x\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with 
+\begin_inset Formula 
+\[
+p\left(x\right)=\frac{f_{0}\left(x\right)}{f_{1}\left(x\right)},q\left(x\right)=\frac{g\left(x\right)}{f_{1}\left(x\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can solve linear equations by using the integrating factor.
+ Below, we will derive the solution.
+ Once this solution has been derived, we can use the result for any linear
+ equations we wish to solve.
+\end_layout
+
+\begin_layout Section*
+Derivation of Integrating Factor
+\end_layout
+
+\begin_layout Standard
+Consider the following:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d}{dx}\left(y\mu\left(x\right)\right)=y'\mu\left(x\right)+y\mu'\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+By product rule.
+ If we divide both sides by 
+\begin_inset Formula $\mu\left(x\right)$
+\end_inset
+
+, we get
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\frac{d}{dx}\left(y\mu\left(x\right)\right)}{\mu\left(x\right)}=\frac{y'\mu\left(x\right)+y\mu'\left(x\right)}{\mu\left(x\right)}=y'+\frac{\mu'\left(x\right)}{\mu\left(x\right)}y
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we set 
+\begin_inset Formula $p\left(x\right)=\frac{\mu'\left(x\right)}{\mu\left(x\right)}$
+\end_inset
+
+, then we have the left side of our linear differential equation.
+ Thus 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\frac{d}{dx}\left(y\mu\left(x\right)\right)}{\mu\left(x\right)}=\frac{y'\mu\left(x\right)+y\mu'\left(x\right)}{\mu\left(x\right)}=y'+\frac{\mu'\left(x\right)}{\mu\left(x\right)}y=y'+p\left(x\right)y=q\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We now can solve for 
+\begin_inset Formula $\mu\left(x\right)$
+\end_inset
+
+, as we have a separable equation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d\mu}{dx}\frac{1}{\mu}=p\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Separate and integrate
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d\mu}{\mu}=p\left(x\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int\frac{d\mu}{\mu}=\int p\left(x\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ln\left|\mu\right|=\int p\left(x\right)dx+C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|\mu\right|=e^{\int p\left(x\right)dx+C}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu=Ce^{\int p\left(x\right)dx}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Usually we do not bother including the 
+\begin_inset Formula $C$
+\end_inset
+
+ in the integrating factor.
+ We will see why later.
+ We can now solve for 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ Recall
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\frac{d}{dx}\left(y\mu\left(x\right)\right)}{\mu\left(x\right)}=q\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can rearrange to yield
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d}{dx}\left(y\mu\left(x\right)\right)=q\left(x\right)\mu\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and integrate
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\mu\left(x\right)=\int q\left(x\right)\mu\left(x\right)dx+C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And now, we solve for 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\left(x\right)=\frac{\int q\left(x\right)\mu\left(x\right)dx+C}{\mu\left(x\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, to show why we are okay to drop the constant in front of the integrating
+ factor, suppose
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(x\right)=C_{1}e^{\int p\left(x\right)dx}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\left(x\right)=\frac{\int q\left(x\right)C_{1}e^{\int p\left(x\right)dx}dx+C}{C_{1}e^{\int p\left(x\right)dx}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can pull a 
+\begin_inset Formula $C_{1}$
+\end_inset
+
+ out of the numerator
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\left(x\right)=\frac{C_{1}\left(\int q\left(x\right)e^{\int p\left(x\right)dx}dx+\frac{C}{C_{1}}\right)}{C_{1}e^{\int p\left(x\right)dx}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and cancel it from the numerator and denominato
+\begin_inset Formula 
+\[
+y\left(x\right)=\frac{\int q\left(x\right)e^{\int p\left(x\right)dx}dx+\frac{C}{C_{1}}}{e^{\int p\left(x\right)dx}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As 
+\begin_inset Formula $C$
+\end_inset
+
+ is an arbitrary real constant, then it can absorb the 
+\begin_inset Formula $\frac{1}{C_{1}}$
+\end_inset
+
+, thus 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\left(x\right)=\frac{\int q\left(x\right)e^{\int p\left(x\right)dx}dx+C}{e^{\int p\left(x\right)dx}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In summary, to solve a differential equation of the form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y'+p\left(x\right)y=q\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+we take 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\left(x\right)=\frac{\int q\left(x\right)\mu\left(x\right)dx+C}{\mu\left(x\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(x\right)=e^{\int p\left(x\right)dx}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Examples
+\end_layout
+
+\begin_layout Standard
+Now that we have our formula for integrating factor, we are able to use
+ it freely.
+ Let's solve some linear equations using the integrating factor.
+\end_layout
+
+\begin_layout Subsection*
+Ex 1)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y'+\cos\left(x\right)y=2\cos\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+First we find 
+\begin_inset Formula $\mu\left(x\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(x\right)=e^{\int\cos\left(x\right)dx}=e^{\sin\left(x\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Recall we usually drop 
+\begin_inset Formula $C$
+\end_inset
+
+ when finding the integrating factor).
+ Now, we plug this into the solution for 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\frac{\int e^{\sin\left(x\right)}\left(2\cos\left(x\right)\right)dx+C}{e^{\sin\left(x\right)}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can solve the top integral using a 
+\begin_inset Formula $u$
+\end_inset
+
+-sub.
+ Thus 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int e^{\sin\left(x\right)}\left(2\cos\left(x\right)\right)dx=2\int e^{\sin\left(x\right)}\cos\left(x\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u=\sin\left(x\right)\ du=\cos\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+2\int e^{\sin\left(x\right)}\cos\left(x\right)dx=2\int e^{u}du=2e^{u}=2e^{\sin\left(x\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(We usually drop the 
+\begin_inset Formula $+C$
+\end_inset
+
+ here, since it is already accounted for in the solution for 
+\begin_inset Formula $y$
+\end_inset
+
+).
+ We can plug this in to yield:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\frac{\int e^{\sin\left(x\right)}\left(2\cos\left(x\right)\right)dx+C}{e^{\sin\left(x\right)}}=y=\frac{2e^{\sin\left(x\right)}+C}{e^{\sin\left(x\right)}}=2+Ce^{-\sin\left(x\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Ex 2)
+\end_layout
+
+\begin_layout Standard
+Solve 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y'+3y=e^{2x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+First we find the integrating factor:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(x\right)=e^{\int3dx}=e^{3x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we plug in for 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\frac{\int e^{3x}e^{2x}dx+C}{e^{3x}}=\frac{\int e^{5x}dx+C}{e^{3x}}=\frac{\frac{e^{5x}}{5}+C}{e^{3x}}=\frac{e^{2x}}{5}+Ce^{-3x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Ex 3)
+\end_layout
+
+\begin_layout Standard
+Sometimes you will run into an integral that cannot be computed in terms
+ of elementary functions (polynomials, radicals, exponentials, logs, and
+ trig functions).
+ Here is an example of this and how to solve the equation in this case:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y'+\left(x^{3}\right)y=x^{2}+x,y\left(1\right)=2
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+First, we find the integrating factor:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(x\right)=e^{\int x^{3}dx}=e^{\frac{x^{4}}{4}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we plug into the solution for 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\frac{\int e^{\frac{x^{4}}{4}}\left(x^{2}+x\right)dx+C}{e^{\frac{x^{4}}{4}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I claim the integral 
+\begin_inset Formula $\int e^{\frac{x^{4}}{4}}\left(x^{2}+x\right)dx$
+\end_inset
+
+ cannot be solved with elementary functions (at least I do not know how
+ to).
+ We can still get a solution by rewriting the integral with a dummy variable
+ 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ We take 
+\begin_inset Formula $\int f\left(x\right)dx=\int_{x_{0}}^{x}f\left(t\right)dt+C$
+\end_inset
+
+ where 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ is the given initial value of 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ For our problem this means 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\frac{\int e^{\frac{x^{4}}{4}}\left(x^{2}+x\right)dx+C}{e^{\frac{x^{4}}{4}}}=\frac{\int_{1}^{x}e^{\frac{t^{4}}{4}}\left(t^{2}+t\right)dt+C}{e^{\frac{x^{4}}{4}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And we can now plug in the initial condition to solve for 
+\begin_inset Formula $C$
+\end_inset
+
+.
+\begin_inset Formula 
+\[
+y\left(1\right)=\frac{\int_{1}^{1}e^{\frac{t^{4}}{4}}\left(t^{2}+t\right)dt+C}{e^{\frac{1^{4}}{4}}}=\frac{0+C}{e^{\frac{1}{4}}}=2
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C=2e^{\frac{1}{4}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and we get a final answer of 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\frac{\int_{1}^{x}e^{\frac{t^{4}}{4}}\left(t^{2}+t\right)dt+2e^{\frac{1}{4}}}{e^{\frac{x^{4}}{4}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Ex 4)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y'+\cos\left(x\right)y=x,y\left(\pi\right)=3
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+First we find the integrating factor:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(x\right)=e^{\int\cos\left(x\right)dx}=e^{\sin\left(x\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now we plug in for 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\frac{\int e^{\sin\left(x\right)}xdx+C}{e^{\sin\left(x\right)}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The integral is not nice, so we will use a dummy variable 
+\begin_inset Formula $t$
+\end_inset
+
+, in our expression of 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\frac{\int_{\pi}^{x}e^{\sin\left(t\right)}tdt+C}{e^{\sin\left(x\right)}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we can plug in our initial conditions.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\left(\pi\right)=\frac{\int_{\pi}^{\pi}e^{\sin\left(t\right)}tdt+C}{e^{\sin\left(\pi\right)}}=3
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{C}{e^{0}}=C=3
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\left(x\right)=\frac{\int_{\pi}^{x}e^{\sin\left(t\right)}tdt+3}{e^{\sin\left(x\right)}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Ex 5)
+\end_layout
+
+\begin_layout Standard
+This last example will let us review an integral trick from calculus 
+\begin_inset Formula $2$
+\end_inset
+
+.
+ Consider
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y'+y=\sin\left(3x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+First we can find the integrating factor:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(x\right)=e^{\int dx}=e^{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\frac{\int e^{x}\sin\left(3x\right)dx+C}{e^{x}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can find the integral 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int e^{x}\sin\left(3x\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+by using integration by parts twice.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u=\sin\left(3x\right),\ dv=e^{x}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+du=3\cos\left(3x\right)dx,\ v=e^{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int e^{x}\sin\left(3x\right)dx=\sin\left(3x\right)e^{x}-3\int\cos\left(3x\right)e^{x}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we apply integration by parts once more, we see
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u=\cos\left(3x\right),\ dv=e^{x}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+du=-3\sin\left(3x\right),\ v=e^{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sin\left(3x\right)e^{x}-3\int\cos\left(3x\right)e^{x}dx=\sin\left(3x\right)e^{x}-3\left(\cos\left(3x\right)e^{x}+3\int e^{x}\sin\left(3x\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\sin\left(3x\right)e^{x}-3\cos\left(3x\right)e^{x}-9\int e^{x}\sin\left(3x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But the original integral has appeared again on the right hand side of the
+ equation.
+ As 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int e^{x}\sin\left(3x\right)dx=\sin\left(3x\right)e^{x}-3\cos\left(3x\right)e^{x}-9\int e^{x}\sin\left(3x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can solve for the original integral algebraically:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+10\int e^{x}\sin\left(3x\right)dx=\sin\left(3x\right)e^{x}-3\cos\left(3x\right)e^{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int e^{x}\sin\left(3x\right)dx=\frac{\sin\left(3x\right)e^{x}-3\cos\left(3x\right)e^{x}}{10}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note the 
+\begin_inset Formula $+C$
+\end_inset
+
+ was dropped, as it is already accounted for in the solution of 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ Thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\frac{\int e^{x}\sin\left(3x\right)dx+C}{e^{x}}=\frac{\frac{\sin\left(3x\right)e^{x}-3\cos\left(3x\right)e^{x}}{10}+C}{e^{x}}=\frac{\sin\left(3x\right)e^{x}-3\cos\left(3x\right)e^{x}}{10e^{x}}+Ce^{-x}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+y=\frac{\sin\left(3x\right)-3\cos\left(3x\right)}{10}+Ce^{-x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

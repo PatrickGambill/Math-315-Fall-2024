@@ -1,0 +1,1988 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 0.4in
+\topmargin 0.75in
+\rightmargin 0.4in
+\bottommargin 0.5in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Lecture 10
+\end_layout
+
+\begin_layout Section*
+Exact Equations
+\end_layout
+
+\begin_layout Standard
+Suppose you have a function 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(x,y\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can take the complete derivative using multivariate chain rule
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dF=\frac{\partial F}{\partial x}dx+\frac{\partial F}{\partial y}dy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For convenience, we will call
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial F}{\partial x}=F_{x},\ \frac{\partial F}{\partial y}=F_{y}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dF=F_{x}dx+F_{y}dy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we set this function equal to a constant, we have the equation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(x,y\right)=C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and if we take the derivative of both sides, we get the differential equation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{x}dx+F_{y}dy=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+or if we rearrange
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{x}+F_{y}\frac{dy}{dx}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As 
+\begin_inset Formula $F_{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $F_{y}$
+\end_inset
+
+ come from the same function, we have 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{xy}=F_{yx}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(For nice enough 
+\begin_inset Formula $F\left(x,y\right)$
+\end_inset
+
+).
+ We will assume 
+\begin_inset Formula $F\left(x,y\right)$
+\end_inset
+
+ is nice enough to allow this for our purposes.
+ We call 
+\begin_inset Formula $F\left(x,y\right)$
+\end_inset
+
+ the potential function.
+ Any differential equation that can be written by taking the derivative
+ of a potential function is called an exact equation.
+ Equivalently, any equation of the form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M+N\frac{dy}{dx}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+such that 
+\begin_inset Formula 
+\[
+M_{y}=N_{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+is an exact equation.
+ Here, we replace 
+\begin_inset Formula $F_{x}$
+\end_inset
+
+ with 
+\begin_inset Formula $M$
+\end_inset
+
+ and 
+\begin_inset Formula $F_{y}$
+\end_inset
+
+ with 
+\begin_inset Formula $N$
+\end_inset
+
+ to get the above condition.
+ To solve an exact equation, we have the following steps:
+\end_layout
+
+\begin_layout Enumerate
+Verify that 
+\begin_inset Formula $M_{y}=N_{x}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Take the integrals 
+\begin_inset Formula $\int Mdx$
+\end_inset
+
+ and 
+\begin_inset Formula $\int Ndy$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Set the results of the integrals equal to each other and match the terms.
+ This is 
+\begin_inset Formula $F\left(x,y\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We need to do step one to verify we have an exact equation.
+ Otherwise this process will not work.
+ Let's do some examples.
+\end_layout
+
+\begin_layout Subsection*
+Examples
+\end_layout
+
+\begin_layout Subsection*
+Ex 1)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\sin\left(x\right)=2e^{2x}+\left(\cos\left(x\right)+\frac{2}{y}\right)\frac{dy}{dx}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+First, let's rearrange this into the proper form.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+2e^{2x}-y\sin\left(x\right)+\left(\cos\left(x\right)+\frac{2}{y}\right)\frac{dy}{dx}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M=2e^{2x}-y\sin\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N=\cos\left(x\right)+\frac{2}{y}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we can do 
+\series bold
+step 1
+\series default
+ and check the partial derivatives.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M_{y}=-\sin\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{x}=-\sin\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As 
+\begin_inset Formula $M_{y}=N_{x}$
+\end_inset
+
+, we have an exact equation.
+ Now, we can integrate for 
+\series bold
+step 2
+\series default
+.
+ Since our integration is undoing partial derivatives, we will treat each
+ variable not in the differential as a constant.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int Mdx=\int2e^{2x}-y\sin\left(x\right)dx=e^{2x}-y\int\sin\left(x\right)dx=e^{2x}+y\cos\left(x\right)+A\left(y\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $A\left(y\right)$
+\end_inset
+
+ is some function of 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int Ndy=\int\cos\left(x\right)+\frac{2}{y}dy=y\cos\left(x\right)+2\ln\left|y\right|+B\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $B\left(x\right)$
+\end_inset
+
+ is some function of 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Now, we set the integrals equal to each other and match terms for 
+\series bold
+step 3
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+e^{2x}+y\cos\left(x\right)+A\left(y\right)=y\cos\left(x\right)+2\ln\left|y\right|+B\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here, we have 
+\begin_inset Formula $A\left(y\right)=2\ln\left|y\right|$
+\end_inset
+
+ and 
+\begin_inset Formula $B\left(x\right)=e^{2x}$
+\end_inset
+
+ in order for us to have equality.
+ This means 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(x,y\right)=e^{2x}+y\cos\left(x\right)+2\ln\left|y\right|=C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+is our solution to the differential equation.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Ex 2)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+2y+1+2x\frac{dy}{dx}=\frac{3}{\left(xy\right)^{2}}+\frac{6}{xy^{3}}\frac{dy}{dx}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+First, let's rewrite the equation in the proper form.
+ We will bring all of the terms to the same side.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+2y+1-\frac{3}{\left(xy\right)^{2}}+2x\frac{dy}{dx}-\frac{6}{xy^{3}}\frac{dy}{dx}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we will group the terms together into 
+\begin_inset Formula $M$
+\end_inset
+
+ and 
+\begin_inset Formula $N$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(2y+1-\frac{3}{\left(xy\right)^{2}}\right)+\left(2x-\frac{6}{xy^{3}}\right)\frac{dy}{dx}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we can do 
+\series bold
+step 1
+\series default
+ and verify this is an exact equation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M_{y}=2+\frac{6}{x^{2}y^{3}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{x}=2+\frac{6}{x^{2}y^{3}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As 
+\begin_inset Formula $M_{y}=N_{x}$
+\end_inset
+
+ we have an exact equation and we can integrate both 
+\begin_inset Formula $M$
+\end_inset
+
+ and 
+\begin_inset Formula $N$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int Mdx=\int2y+1-\frac{3}{x^{2}y^{2}}dx=2xy+x+\frac{3}{xy^{2}}+A\left(y\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $A\left(y\right)$
+\end_inset
+
+ is some function of 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int Ndy=\int2x-\frac{6}{xy^{3}}dy=2xy+\frac{3}{xy^{2}}+B\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $B\left(x\right)$
+\end_inset
+
+ is some function of 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Now, we can set the integrals equal to each other and match terms.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+2xy+x+\frac{3}{xy^{2}}+A\left(y\right)=2xy+\frac{3}{xy^{2}}+B\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here, 
+\begin_inset Formula $B\left(x\right)=x$
+\end_inset
+
+ and 
+\begin_inset Formula $A\left(y\right)=0$
+\end_inset
+
+.
+ Thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(x,y\right)=2xy+x+\frac{3}{xy^{2}}=C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+is our solution to the differential equation.
+\end_layout
+
+\begin_layout Section*
+(Almost) Exact Equations
+\end_layout
+
+\begin_layout Standard
+Sometimes equations are of the form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M+N\frac{dy}{dx}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+but 
+\begin_inset Formula 
+\[
+M_{y}\neq N_{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Even so, we can often find a solution if we first multiply all the terms
+ of the equation by an integrating factor.
+ Suppose we have a function 
+\begin_inset Formula $u\left(x,y\right)$
+\end_inset
+
+ such that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+uM+uN\frac{dy}{dx}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+That is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial\left(uM\right)}{\partial y}=u_{y}M+uM_{y}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial\left(uN\right)}{\partial x}=u_{x}N+uN_{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+are equal.
+ Then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u_{y}M+uM_{y}=u_{x}N+uN_{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we wish to solve for 
+\begin_inset Formula $u$
+\end_inset
+
+, this doesn't seem very helpful.
+ We have turned an ODE into a PDE.
+ To make like a little easier, let's see what happens if 
+\begin_inset Formula $u$
+\end_inset
+
+ is only a function of 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u_{y}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u_{x}=u'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+thus we have 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+uM_{y}=u'N+uN_{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+we can now separate.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+uM_{y}-uN_{x}=u'N
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u'N=u\left(M_{y}-N_{x}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u'=\frac{M_{y}-N_{x}}{N}u
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{du}{dx}=\frac{M_{y}-N_{x}}{N}u
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{du}{u}=\frac{M_{y}-N_{x}}{N}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In order for these to be equal, we must have 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{M_{y}-N_{x}}{N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+as a function only in terms of 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ The left side can only contain 
+\begin_inset Formula $x$
+\end_inset
+
+ terms as 
+\begin_inset Formula $u$
+\end_inset
+
+ is a function of 
+\begin_inset Formula $x$
+\end_inset
+
+, so we must assume the same of the right side.
+ If this condition is met, we can now solve.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int\frac{du}{u}=\int\frac{M_{y}-N_{x}}{N}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ln\left|u\right|=\int\frac{M_{y}-N_{x}}{N}dx
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+u=e^{\int\frac{M_{y}-N_{x}}{N}dx}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Similarly, we can solve for 
+\begin_inset Formula $u$
+\end_inset
+
+ if 
+\begin_inset Formula $u$
+\end_inset
+
+ is a function of 
+\begin_inset Formula $y$
+\end_inset
+
+ only.
+ If 
+\begin_inset Formula $u$
+\end_inset
+
+ is a function of 
+\begin_inset Formula $y$
+\end_inset
+
+ only, then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u_{x}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+so
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u'M+uM_{y}=uN_{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can now separate
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u'M=uN_{x}-uM_{y}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u'=\frac{N_{x}-M_{y}}{M}u
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{u'}{u}=\frac{N_{x}-M_{y}}{M}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{du}{u}=\frac{N_{x}-M_{y}}{M}dy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As we have all of the 
+\begin_inset Formula $u$
+\end_inset
+
+ terms on the left side, and 
+\begin_inset Formula $u$
+\end_inset
+
+ is a function of 
+\begin_inset Formula $y$
+\end_inset
+
+ only, then we must have 
+\begin_inset Formula $\frac{N_{x}-M_{y}}{M}$
+\end_inset
+
+ be a function of 
+\begin_inset Formula $y$
+\end_inset
+
+ only as well.
+ Now, we integrate.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int\frac{du}{u}=\int\frac{N_{x}-M_{y}}{M}dy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ln\left|u\right|=\int\frac{N_{x}-M_{y}}{M}dy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u=e^{\int\frac{N_{x}-M_{y}}{M}dy}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In either case, once we know 
+\begin_inset Formula $u$
+\end_inset
+
+, we multiply the original differential equation by 
+\begin_inset Formula $u$
+\end_inset
+
+ to get an exact equation.
+ In summary,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u=e^{\int\frac{M_{y}-N_{x}}{N}dx}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+if
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{M_{y}-N_{x}}{N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+is a function of 
+\begin_inset Formula $x$
+\end_inset
+
+ only and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u=e^{\int\frac{N_{x}-M_{y}}{M}dy}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+if 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{N_{x}-M_{y}}{M}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+is a function of 
+\begin_inset Formula $y$
+\end_inset
+
+ only.
+\end_layout
+
+\begin_layout Subsection*
+Examples
+\end_layout
+
+\begin_layout Subsection*
+Ex 3)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\cos\left(x\right)y+\left(1+\sin\left(x\right)\right)\frac{dy}{dx}=\sin\left(x\right)y+y+1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+First, let's rearrange this equation into the correct form.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(\cos\left(x\right)y-\sin\left(x\right)y-y-1\right)+\left(1+\sin\left(x\right)\right)\frac{dy}{dx}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M=\cos\left(x\right)y-\sin\left(x\right)y-y-1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N=1+\sin\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we take the partial derivatives,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M_{y}=\cos\left(x\right)-\sin\left(x\right)-1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{x}=\cos\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As 
+\begin_inset Formula $M_{y}\neq N_{x}$
+\end_inset
+
+, we do not have an exact equation.
+ If we take
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{M_{y}-N_{x}}{N}=\frac{\left(\cos\left(x\right)-\sin\left(x\right)-1\right)-\cos\left(x\right)}{1+\sin\left(x\right)}=\frac{-1\left(1+\sin\left(x\right)\right)}{1+\sin\left(x\right)}=-1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+we have a function purely of 
+\begin_inset Formula $x$
+\end_inset
+
+, thus 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u=e^{\int-1dx}=e^{-x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+will be out integrating factor.
+ This turns the original differential equation into the equivalent equation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+e^{-x}\left(\cos\left(x\right)y-\sin\left(x\right)y-y-1\right)+e^{-x}\left(1+\sin\left(x\right)\right)\frac{dy}{dx}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we can apply 
+\series bold
+step 1
+\series default
+, and we see
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M_{y}=e^{-x}\left(\cos\left(x\right)-\sin\left(x\right)-1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{x}=-e^{-x}-e^{-x}\sin\left(x\right)+e^{-x}\cos\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and thus 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M_{y}=N_{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and we have an exact equation.
+ Now, we can apply 
+\series bold
+step 2
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int Mdx=\int e^{-x}\left(\cos\left(x\right)y-\sin\left(x\right)y-y-1\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=y\int e^{-x}\left(\cos\left(x\right)-\sin\left(x\right)\right)dx+\left(-y-1\right)\int e^{-x}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can solve each integral separately.
+ The first integral will require us to use integration by parts twice
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int e^{-x}\left(\cos\left(x\right)-\sin\left(x\right)\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u=\cos\left(x\right)-\sin\left(x\right),\ dv=e^{-x}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+du=-\sin\left(x\right)-\cos\left(x\right)dx\ dv=-e^{-x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int e^{-x}\left(\cos\left(x\right)-\sin\left(x\right)\right)dx=e^{-x}\left(\sin\left(x\right)-\cos\left(x\right)\right)+\int-e^{-x}\left(\sin\left(x\right)+\cos\left(x\right)\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u=\sin\left(x\right)+\cos\left(x\right)\ dv=-e^{-x}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+du=\cos\left(x\right)-\sin\left(x\right)dx\ v=e^{-x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+e^{-x}\left(\sin\left(x\right)-\cos\left(x\right)\right)+\int-e^{-x}\left(\sin\left(x\right)+\cos\left(x\right)\right)dx=e^{-x}\left(\sin\left(x\right)-\cos\left(x\right)\right)+e^{-x}\left(\sin\left(x\right)+\cos\left(x\right)\right)-\int e^{x}\left(\cos\left(x\right)-\sin\left(x\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=2e^{-x}\sin\left(x\right)-\int e^{x}\left(\cos\left(x\right)-\sin\left(x\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On the right side, we have the original integral again, so we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int e^{-x}\left(\cos\left(x\right)-\sin\left(x\right)\right)dx=2e^{-x}\sin\left(x\right)-\int e^{x}\left(\cos\left(x\right)-\sin\left(x\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+2\int e^{-x}\left(\cos\left(x\right)-\sin\left(x\right)\right)dx=2e^{-x}\sin\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int e^{-x}\left(\cos\left(x\right)-\sin\left(x\right)\right)dx=e^{-x}\sin\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int Mdx=ye^{-x}\sin\left(x\right)+\left(-y-1\right)\int e^{-x}dx=ye^{-x}\sin\left(x\right)+\left(y+1\right)e^{-x}+A\left(y\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $A\left(y\right)$
+\end_inset
+
+ is some function of 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ Now, we can take the second integral.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int Ndy=\int e^{-x}\left(1+\sin\left(x\right)\right)dy=e^{-x}y+e^{-x}\sin\left(x\right)y+B\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $B\left(x\right)$
+\end_inset
+
+ is some function of 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Now, we match the terms.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+ye^{-x}\sin\left(x\right)+\left(y+1\right)e^{-x}+A\left(y\right)=e^{-x}y+e^{-x}\sin\left(x\right)y+B\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here, we see 
+\begin_inset Formula $A\left(y\right)=0$
+\end_inset
+
+ and 
+\begin_inset Formula $B\left(x\right)=e^{-x}$
+\end_inset
+
+, thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(x,y\right)=ye^{-x}\sin\left(x\right)+\left(y+1\right)e^{-x}=C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+is the solution to our differential equation.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Ex 4)
+\end_layout
+
+\begin_layout Standard
+Consider 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(3y-y^{2}\sin\left(x\right)\right)+\left(2+6x+3y\cos\left(x\right)\right)\frac{dy}{dx}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M=3y-y^{2}\sin\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N=2+6x+3y\cos\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M_{y}=3-2y\sin\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{x}=6-3y\sin\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M_{y}\neq N_{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+we do not have an exact equation.
+ Even so, suppose we take 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{N_{x}-M_{y}}{M}=\frac{\left(6-3y\sin\left(x\right)\right)-\left(3-2y\sin\left(x\right)\right)}{3y-y^{2}\sin\left(x\right)}=\frac{3-y\sin\left(x\right)}{\left(3-y\sin\left(x\right)\right)y}=\frac{1}{y}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So we have 
+\begin_inset Formula $\frac{N_{x}-M_{y}}{M}$
+\end_inset
+
+ as a function of 
+\begin_inset Formula $y$
+\end_inset
+
+ only, thus we have an integrating factor
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u=e^{\int\frac{N_{x}-M_{y}}{M}dy}=e^{\int\frac{1}{y}dy}=e^{\ln\left|y\right|}=y
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So we can solve the equivalent equation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\left(3y-y^{2}\sin\left(x\right)\right)+y\left(2+6x+3y\cos\left(x\right)\right)\frac{dy}{dx}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+3y^{2}-y^{3}\sin\left(x\right)+\left(2y+6xy+3y^{2}\cos\left(x\right)\right)\frac{dy}{dx}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we check 
+\begin_inset Formula $M,N$
+\end_inset
+
+ we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M_{y}=6y-3y^{2}\sin\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{x}=6y-3y^{2}\sin\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M_{y}=N_{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and the above equation is exact.
+ As 
+\series bold
+step 1
+\series default
+ is satisfied, we can now move on to 
+\series bold
+step 2
+\series default
+ and integrate.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int Mdx=\int3y^{2}-y^{3}\sin\left(x\right)dx=3xy^{2}+y^{3}\cos\left(x\right)+A\left(y\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $A\left(y\right)$
+\end_inset
+
+ is some function of 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ For the second integral, we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int Ndy=\int2y+6xy+3y^{2}\cos\left(x\right)dy=y^{2}+3xy^{2}+y^{3}\cos\left(x\right)+B\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $B\left(x\right)$
+\end_inset
+
+ is some function of 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Finally, we match terms and solve our differential equation.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+3xy^{2}+y^{3}\cos\left(x\right)+A\left(y\right)=y^{2}+3xy^{2}+y^{3}\cos\left(x\right)+B\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+By matching terms, we see 
+\begin_inset Formula $A\left(y\right)=y^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $B\left(x\right)=0$
+\end_inset
+
+, thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F\left(x,y\right)=y^{2}+3xy^{2}+y^{3}\cos\left(x\right)=C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

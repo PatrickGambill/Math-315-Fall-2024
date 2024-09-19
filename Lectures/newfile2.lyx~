@@ -1,0 +1,844 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 0.4in
+\topmargin 0.75in
+\rightmargin 0.4in
+\bottommargin 0.5in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Lecture 2
+\end_layout
+
+\begin_layout Standard
+Today we will talk about classification of differential equations.
+\end_layout
+
+\begin_layout Section*
+Checklist
+\end_layout
+
+\begin_layout Standard
+As we classify differential equations and systems of differential equations,
+ we have a 
+\begin_inset Quotes eld
+\end_inset
+
+checklist
+\begin_inset Quotes erd
+\end_inset
+
+ of possible properties to test for.
+ This list is not all of the possible properties, but for our purposes,
+ it is large enough.
+ Let's define each of these properties and give examples.
+\end_layout
+
+\begin_layout Subsection*
+System/Equation
+\end_layout
+
+\begin_layout Standard
+If the equation is a single differential equation, it is an equation.
+ It is also possible to have systems of differential equations.
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 1)
+\end_layout
+
+\begin_layout Standard
+This is an equation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}+2x=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 2)
+\end_layout
+
+\begin_layout Standard
+This is an equation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d^{2}y}{dx^{2}}+2x\frac{dy}{dx}=\sin\left(y\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 3)
+\end_layout
+
+\begin_layout Standard
+This is a system.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+\frac{dy}{dt}=2x\\
+\frac{dx}{dt}=2y
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 4)
+\end_layout
+
+\begin_layout Standard
+This is a system.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+\frac{d^{2}y}{dt^{2}}=\frac{dx}{dt}\\
+\frac{d^{2}x}{dt^{2}}=\frac{dy}{dt}+3xy
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+ODE/PDE
+\end_layout
+
+\begin_layout Standard
+An Ordinary Differential Equation (ODE) is a differential equation that
+ only contains ordinary derivatives.
+ A PDE (Partial Differential Equation) is a differential equation that contains
+ partial derivatives.
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 1)
+\end_layout
+
+\begin_layout Standard
+This is an ODE.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}+2x=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 2)
+\end_layout
+
+\begin_layout Standard
+This is an ODE.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d^{2}y}{dx^{2}}+2x\frac{dy}{dx}=\sin\left(y\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 3)
+\end_layout
+
+\begin_layout Standard
+This is a PDE.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial y}{\partial t}+\frac{\partial y}{\partial x}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 4)
+\end_layout
+
+\begin_layout Standard
+This is a PDE.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial^{2}u}{\partial t^{2}}=\frac{\partial^{2}u}{\partial x^{2}}-\frac{\partial^{2}u}{\partial y^{2}}+\frac{\partial^{3}u}{\partial x\partial y\partial t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Order
+\end_layout
+
+\begin_layout Standard
+The order of a differential equation/system is the highest order derivative
+ taken in the differential equation.
+ We only care about the term with the highest number of derivatives.
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 1)
+\end_layout
+
+\begin_layout Standard
+This is first order.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}+2x=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 2)
+\end_layout
+
+\begin_layout Standard
+This is a second order.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d^{2}y}{dx^{2}}+2x\frac{dy}{dx}=\sin\left(y\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 3)
+\end_layout
+
+\begin_layout Standard
+This is first order.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial y}{\partial t}+\frac{\partial y}{\partial x}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 4)
+\end_layout
+
+\begin_layout Standard
+This is third order, as the last term has 
+\begin_inset Formula $3$
+\end_inset
+
+ partial derivatives (even though they are split between multiple independent
+ variables).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial^{2}u}{\partial t^{2}}=\frac{\partial^{2}u}{\partial x^{2}}-\frac{\partial^{2}u}{\partial y^{2}}+\frac{\partial^{3}u}{\partial x\partial y\partial t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Autonomous
+\end_layout
+
+\begin_layout Standard
+An ODE is autonomous if it has no explicit dependence on the independent
+ variable.
+ Below are some examples and non-examples.
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 1)
+\end_layout
+
+\begin_layout Standard
+This equation is autonomous.
+ The independent variable only appears in the expression for the derivative.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}+y=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 2)
+\end_layout
+
+\begin_layout Standard
+This equation is autonomous.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d^{2}y}{dt^{2}}+3y\frac{dy}{dt}=\sin\left(y^{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 3)
+\end_layout
+
+\begin_layout Standard
+This equation is not autonomous since 
+\begin_inset Formula $x$
+\end_inset
+
+ appears explicitly.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}+xy=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 4)
+\end_layout
+
+\begin_layout Standard
+This equation is not autonomous since 
+\begin_inset Formula $x$
+\end_inset
+
+ appears explicitly.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d^{2}y}{dx^{2}}+2\frac{dy}{dx}=x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Linear/Non-Linear
+\end_layout
+
+\begin_layout Standard
+An ordinary differential equation is said to be linear if it can be written
+ in the following form:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{n}\left(x\right)\frac{d^{n}y}{dx^{n}}+f_{n-1}\left(x\right)\frac{d^{n-1}y}{dx^{n}}+\dots+f_{0}\left(x\right)y=g\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where each 
+\begin_inset Formula $f_{i}\left(x\right)$
+\end_inset
+
+ is a function of 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $g\left(x\right)$
+\end_inset
+
+ is a function of 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 1)
+\end_layout
+
+\begin_layout Standard
+This equation is linear, as it is in the right form (note some of the 
+\begin_inset Formula $f_{i}\left(x\right)$
+\end_inset
+
+ could be 
+\begin_inset Formula $0$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(x^{2}-4\right)\frac{d^{2}y}{dx^{2}}+\cos\left(x\right)y=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 2)
+\end_layout
+
+\begin_layout Standard
+This equation is linear (but we will have to rearrange the equation to show
+ this).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ln\left(\frac{dy}{dx}\right)=x^{2}+1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Take 
+\begin_inset Formula $e$
+\end_inset
+
+ to the power of both sides:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+e^{\ln\left(\frac{dy}{dx}\right)}=e^{x^{2}+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=e^{x^{2}+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 3)
+\end_layout
+
+\begin_layout Standard
+This equation is non-linear as we have a 
+\begin_inset Formula $y\frac{dy}{dx}$
+\end_inset
+
+ term.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\frac{dy}{dx}+y=\sin\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 4)
+\end_layout
+
+\begin_layout Standard
+This equation is non-linear.
+ It is not possible to remove the power of 
+\begin_inset Formula $y$
+\end_inset
+
+ by algebraic manipulation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}+y^{2}=2x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Homogeneous/Non-Homogeneous
+\end_layout
+
+\begin_layout Standard
+Any linear ODE with 
+\begin_inset Formula $g\left(x\right)=0$
+\end_inset
+
+ is said to be homogeneous.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 1)
+\end_layout
+
+\begin_layout Standard
+This equation is homogeneous.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(x^{2}-4\right)\frac{d^{2}y}{dx^{2}}+\cos\left(x\right)y=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 2)
+\end_layout
+
+\begin_layout Standard
+This equation is not homogeneous.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=e^{x^{2}+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 3)
+\end_layout
+
+\begin_layout Standard
+Sometimes you might have to rearrange the equation to check for homogeneity.
+ The equation below is not homogeneous.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}+2x-y=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we rearrange into the proper form, we see:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}-y=-2x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Constant Coefficient
+\end_layout
+
+\begin_layout Standard
+A linear differential equation is said to be constant coefficient if every
+ 
+\begin_inset Formula $f_{i}\left(x\right)$
+\end_inset
+
+ is constant.
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 1)
+\end_layout
+
+\begin_layout Standard
+This equation is constant coefficient.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d^{2}y}{dx^{2}}+4\frac{dy}{dx}+3y=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 2)
+\end_layout
+
+\begin_layout Standard
+This equation is constant coefficient.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=e^{x^{2}+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 3)
+\end_layout
+
+\begin_layout Standard
+This equation is not constant coefficient.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(x^{2}-4\right)\frac{d^{2}y}{dx^{2}}+\cos\left(x\right)y=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 4)
+\end_layout
+
+\begin_layout Standard
+Sometimes you have to rearrange an equation to show it is constant coefficient.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+e^{-x}\frac{dy}{dx}=3x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Multiply both sides by 
+\begin_inset Formula $e^{-x}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=3xe^{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Classification Examples
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

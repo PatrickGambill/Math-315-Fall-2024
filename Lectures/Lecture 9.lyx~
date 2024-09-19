@@ -1,0 +1,1548 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 0.4in
+\topmargin 0.75in
+\rightmargin 0.4in
+\bottommargin 0.5in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Lecture 9
+\end_layout
+
+\begin_layout Section*
+Euler's Method
+\end_layout
+
+\begin_layout Standard
+In general solving differential equations of the form:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=f\left(x,y\right),\ y\left(x_{0}\right)=y_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+is difficult.
+ If the differential equation is in one of the nice forms we discussed in
+ class, there might be a nice closed form solution.
+ This usually isn't the case.
+ Even so, we can often numerically approximate a solution.
+ This will give us usable numbers, even if we do not have a closed form
+ solution.
+ One of the simplest methods for approximating differential equations is
+ Euler's method.
+ Here is the process:
+\end_layout
+
+\begin_layout Subsection*
+
+\series bold
+Step 0: Check for existence and uniqueness of the solution
+\end_layout
+
+\begin_layout Standard
+We must start by checking for existence and uniqueness of a solution.
+ If we do not check, there is no guaruntee that numerical methods will work.
+ In practice, this means that no matter how good of a numerical method you
+ use you might not get a working solution for your model.
+ Most computer tools will not check this, so you should be careful to do
+ so even before using a computer.
+ To check these conditions we can use Pickard's Theorem.
+ This is stated below:
+\end_layout
+
+\begin_layout Subsubsection*
+Picard's Theorem of Existence and Uniqueness
+\end_layout
+
+\begin_layout Standard
+Consider the differential equation 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=f\left(x,y\right),\ f\left(x_{0}\right)=y_{0}
+\]
+
+\end_inset
+
+If 
+\begin_inset Formula $f\left(x,y\right)$
+\end_inset
+
+ is a continuous function near 
+\begin_inset Formula $\left(x_{0},y_{0}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\frac{\partial f}{\partial y}$
+\end_inset
+
+ exists and is continuous near 
+\begin_inset Formula $\left(x_{0},y_{0}\right)$
+\end_inset
+
+ then a solution to 
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=f\left(x,y\right),\ f\left(x_{0}\right)=y_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+exists for some interval around 
+\begin_inset Formula $\left(x_{0},y_{0}\right)$
+\end_inset
+
+ and is unique.
+ 
+\end_layout
+
+\begin_layout Subsection*
+
+\series bold
+Step 1: Get the initial conditions of the approximation
+\end_layout
+
+\begin_layout Standard
+These initial conditions are 
+\begin_inset Formula $x_{0},y_{0}$
+\end_inset
+
+ and the step size 
+\begin_inset Formula $h$
+\end_inset
+
+.
+ We need these in order to start calculating.
+\end_layout
+
+\begin_layout Subsection*
+
+\series bold
+Step 2: Update the current 
+\begin_inset Formula $x$
+\end_inset
+
+ value
+\end_layout
+
+\begin_layout Standard
+We update the value of 
+\begin_inset Formula $x$
+\end_inset
+
+ using the formula:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{i+1}=x_{i}+h
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+
+\series bold
+Step 3: Update the current 
+\begin_inset Formula $y$
+\end_inset
+
+ value
+\end_layout
+
+\begin_layout Standard
+We update the value of 
+\begin_inset Formula $y$
+\end_inset
+
+ using the formula:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{i+1}=y_{i}+hf\left(x_{i},y_{i}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+
+\series bold
+Step 4: Repeat steps 2 and 3 until you get the desired approximation
+\end_layout
+
+\begin_layout Standard
+This step is pretty self explanatory, but we do have to keep a couple of
+ things in mind.
+ First, smaller step sizes lead to more accurate approximations but longer
+ computation times.
+ Second, the further the value you wish to approximate is from the initial
+ condition, the worse the approximation will get.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Similarity to linearization 
+\end_layout
+
+\begin_layout Standard
+In calculus 1, you might have covered linear approximations.
+ That is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\left(x\right)\approx y\left(x_{0}\right)+\left(x-x_{0}\right)y'\left(x_{0}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is similar to the equation for updating 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ Here, we are replacing 
+\begin_inset Formula $x-x_{0}$
+\end_inset
+
+ with 
+\begin_inset Formula $h$
+\end_inset
+
+, and we find the slope of the line by taking 
+\begin_inset Formula $f\left(x,y\right)$
+\end_inset
+
+ rather than 
+\begin_inset Formula $y'\left(x\right)$
+\end_inset
+
+.
+ This is because 
+\begin_inset Formula $y'\left(x\right)=\frac{dy}{dx}$
+\end_inset
+
+.
+ With Euler's method, the key difference is that we are repeatedly updating
+ the current 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+ values.
+ Most of the same considerations with linearization will come into play
+ with Euler's method.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Eror of the approximation
+\end_layout
+
+\begin_layout Standard
+If you know the actual solution, you can find the error in the approximation
+ by the formula below.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\text{error}=\left|y_{\text{exact}}-y_{\text{approximation}}\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In practice, we do not know the exact solution (if we did we wouldn't need
+ to approximate).
+ In these cases, we have methods for bounding the error in an approximation.
+ These are outside of the scope of this course, but if you wish to learn
+ more a numerical analysis class will cover this.
+ 
+\end_layout
+
+\begin_layout Section*
+Examples
+\end_layout
+
+\begin_layout Standard
+Here, we will compute a few examples by hand.
+ A Jupyter notebook with code will also be shared on Canvas.
+ It is good to know how to use code, but it is not expected or required
+ that you use code for any of these problems in this class.
+ If you decide to use code, you still need to provide a table of the calculated
+ values and you are still expected to be able to complete the computations
+ by hand on an exam.
+\end_layout
+
+\begin_layout Subsection*
+Ex 1
+\end_layout
+
+\begin_layout Standard
+Approximate the solution of 
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=y^{2}+x,\ y\left(0\right)=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+at 
+\begin_inset Formula $x=1$
+\end_inset
+
+ with a step size of 
+\begin_inset Formula $h=0.5$
+\end_inset
+
+.
+ First, we will verify existence and uniqueness.
+ 
+\begin_inset Formula $y^{2}+x$
+\end_inset
+
+ is continuous at 
+\begin_inset Formula $\left(0,1\right)$
+\end_inset
+
+.
+ In fact, it is continuous at all points as a sum and product of continuous
+ functions.
+ Now, we will check the partial derivative
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial f}{\partial y}=2y
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As this partial derivative exists and is continuous near 
+\begin_inset Formula $\left(0,1\right)$
+\end_inset
+
+, then we know a unique solution to the differential equation exists.
+ Now, we can numerically approximate.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{0}=0,y_{0}=1,h=0.5
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $i=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{1}=x_{0}+h=0+0.5=0.5
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{1}=y_{0}+hf\left(x_{0},y_{0}\right)=y_{0}+h\left(y_{0}^{2}+x_{0}\right)=1+0.5\left(1^{2}+0\right)=1.5
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $i=2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{2}=x_{1}+h=0.5+0.5=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{2}=y_{1}+hf\left(x_{1},y_{1}\right)=1.5+0.5\left(1.5^{2}+0.5\right)=2.875
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So our approximation is 
+\begin_inset Formula $y\left(1\right)\approx2.875$
+\end_inset
+
+.
+ Our work is sumarized in the table below.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+i & x_{i} & y_{i}\\
+0 & 0 & 1\\
+1 & 0.5 & 1.5\\
+2 & 1 & 2.875
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Ex 2
+\end_layout
+
+\begin_layout Standard
+Approximate the solution of 
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=\frac{xy}{x+y},\ y\left(2\right)=2
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+at 
+\begin_inset Formula $x=2.3$
+\end_inset
+
+ with a step size of 
+\begin_inset Formula $h=0.1$
+\end_inset
+
+.
+ First, let's check for existence and uniqueness.
+ At 
+\begin_inset Formula $\left(2,2\right)$
+\end_inset
+
+ we have continuity for 
+\begin_inset Formula $f\left(x,y\right)=\frac{xy}{x+y}$
+\end_inset
+
+, as we are taking the quotient of two continuous functions.
+ The point 
+\begin_inset Formula $\left(0,0\right)$
+\end_inset
+
+ is the only discontiuity.
+ If we are near enough to 
+\begin_inset Formula $\left(2,2\right)$
+\end_inset
+
+, we can avoid this discontinuity.
+ We also have the partial derivative
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial f}{\partial y}=\frac{x\left(x+y\right)-xy\left(1\right)}{\left(x+y\right)^{2}}=\frac{x^{2}+xy-xy}{\left(x+y\right)^{2}}=\frac{x^{2}}{\left(x+y\right)^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This partial derivative exists and will be continuous as long as we not
+ at the point 
+\begin_inset Formula $\left(0,0\right)$
+\end_inset
+
+.
+ As such, a unique solution will exist near 
+\begin_inset Formula $\left(2,2\right)$
+\end_inset
+
+.
+ Now, we can numerically approximate.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{0}=2,y_{0}=2,h=0.1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $i=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{1}=x_{0}+h=2+0.1=2.1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{1}=y_{0}+hf\left(x_{0},y_{0}\right)=y_{0}+hf\left(2,2\right)=2+0.1\left(\frac{2*2}{2+2}\right)=2.1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $i=2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{2}=x_{1}+h=2.1+0.1=2.2
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{2}=y_{1}+hf\left(x_{1},y_{1}\right)=2.1+0.1f\left(2.1,2.1\right)=2.1+0.1\left(\frac{2.1*2.1}{2.1+2.1}\right)=2.205
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $i=3$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{3}=x_{2}+h=2.2+0.1=2.3
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{3}=y_{2}+hf\left(x_{2},y_{2}\right)=2.205+0.1f\left(2.2,2.205\right)=2.205+0.1\left(\frac{2.2*2.205}{2.2+2.205}\right)\approx2.31512485
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So our approximation is 
+\begin_inset Formula 
+\[
+y\left(2.3\right)\approx2.31512485
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The results are summarized in the table below.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+i & x_{i} & y_{i}\\
+0 & 2 & 2\\
+1 & 2.1 & 2.1\\
+2 & 2.2 & 2.205\\
+3 & 2.3 & 2.31512485
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Ex 3
+\end_layout
+
+\begin_layout Standard
+Approximate the solution of 
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=xy+y,\ y\left(0\right)=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+at 
+\begin_inset Formula $x=4$
+\end_inset
+
+ with a step size of 
+\begin_inset Formula $h=1$
+\end_inset
+
+.
+ First, let check for existence and uniqueness of the solution.
+ 
+\begin_inset Formula $f\left(x,y\right)=xy+y$
+\end_inset
+
+ is continuous as a sum and product of continuous functions.
+ The partial derivative
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial f}{\partial y}=x+1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+exists for all 
+\begin_inset Formula $x\in\mathbb{R}$
+\end_inset
+
+ and is continuous for all 
+\begin_inset Formula $x\in\mathbb{R}$
+\end_inset
+
+, thus a solution exists and is unique.
+ Now, we can numerically approximate.
+ The initial conditions are
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{0}=0,y_{0}=1,h=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $i=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{1}=x_{0}+h=0+1=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{1}=y_{0}+hf\left(x_{0},y_{0}\right)=0+1f\left(0,1\right)=0+1\left(0+1\right)=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $i=2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{2}=x_{1}+h=1+1=2
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{2}=y_{1}+hf\left(x_{1},y_{1}\right)=1+1f\left(1,1\right)=1+\left(1+1\right)=3
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $i=3$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{3}=x_{2}+h=2+1=3
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{3}=y_{2}+hf\left(x_{2},y_{2}\right)=3+1f\left(3,3\right)=3+1\left(3*3+3\right)=15
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $i=4$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{4}=x_{3}+h=3+1=4
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{4}=y_{3}+hf\left(x_{3},y_{3}\right)=15+1f\left(4,15\right)=15+\left(4*15+15\right)=90
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus 
+\begin_inset Formula $y\left(4\right)\approx90$
+\end_inset
+
+.
+ The results are summariazed in the table below.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+i & x_{i} & y_{i}\\
+0 & 0 & 1\\
+1 & 1 & 1\\
+2 & 2 & 3\\
+3 & 3 & 15\\
+4 & 4 & 90
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since this is a separable equation, we can find an exact solution and compare
+ the approximation to the exact solution (to find the error in our approximation
+).
+ Let's solve the differential equation!
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=xy+y=y\left(x+1\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Separate and integrate
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{y}=\left(x+1\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int\frac{dy}{y}=\int\left(x+1\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ln\left|y\right|=\frac{x^{2}}{2}+x+C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\pm e^{\frac{x^{2}}{2}+x+C}=Ce^{\frac{x^{2}}{2}+x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With the initial condition
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\left(0\right)=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+we have 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\left(0\right)=Ce^{\frac{0^{2}}{2}+0}=C=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=e^{\frac{x^{2}}{2}+x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\left(4\right)\approx162754.79
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This means the error is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\text{error}=\left|y_{\text{exact}}-y_{\text{approximation}}\right|\approx\left|162754.79-90\right|=162664.79
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The error is very large since we used a very large step size despite the
+ exponential growth in the slope.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Ex 4
+\end_layout
+
+\begin_layout Standard
+Let's try one last example.
+ Approximate the solution of 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y'+\frac{1}{x}y=x,\ y\left(1\right)=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+at 
+\begin_inset Formula $x=1.2$
+\end_inset
+
+ with 
+\begin_inset Formula $h=0.05$
+\end_inset
+
+.
+ First, we need to rewrite the differential equation into the form appropriate
+ for Euler's method.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y'=x-\frac{1}{x}y
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now we can check for existence and uniqueness of the solution.
+ 
+\begin_inset Formula $f\left(x,y\right)=x-\frac{1}{x}y$
+\end_inset
+
+ is continuous near 
+\begin_inset Formula $\left(1,1\right)$
+\end_inset
+
+.
+ We do need to be careful to stay near enough to 
+\begin_inset Formula $\left(1,1\right)$
+\end_inset
+
+ to avoid 
+\begin_inset Formula $x=0$
+\end_inset
+
+ as this is a discontinuity and could cause trouble.
+ The partial derivative
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial f}{\partial y}=-\frac{1}{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+exists and is continuous near 
+\begin_inset Formula $\left(1,1\right)$
+\end_inset
+
+.
+ Once again, we need to be careful to avoid 
+\begin_inset Formula $x=0$
+\end_inset
+
+ as this is a discontinuity and could cause us trouble.
+ Now, let's approximate.
+ The initial conditions are
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{0}=1,y_{0}=1,h=0.05
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $i=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{1}=x_{0}+h=1+0.05=1.05
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{1}=y_{0}+hf\left(x_{0},y_{0}\right)=1+0.05f\left(1,1\right)=1+0.05\left(1-\frac{1}{1}1\right)=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $i=2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{2}=x_{1}+h=1.05+0.05=1.1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{2}=y_{1}+hf\left(x_{1},y_{1}\right)=1+0.05f\left(1.05,1\right)=1+0.05\left(1.05-\frac{1}{1.05}1\right)\approx1.00488095
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $i=3$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{3}=x_{2}+h=1.1+0.05=1.15
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{3}=y_{2}+hf\left(x_{2},y_{2}\right)=1.00488095+0.05f\left(1.15,1.00488095\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=1.00488095+0.05\left(1.1-\frac{1}{1.1}*1.00488095\right)\approx1.014294545
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $i=4$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{4}=x_{3}+h=1.15+0.05=1.2
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{4}=y_{3}+hf\left(x_{3},y_{3}\right)=1.014294545+0.05f\left(1.15,1.014294545\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=1.014294545+0.05\left(1.15-\frac{1}{1.15}*1.014294545\right)\approx1.027608696
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\left(1.2\right)\approx1.027608696
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Our work is summarized in the table below:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccc}
+i & x_{i} & y_{i}\\
+0 & 1 & 1\\
+1 & 1.05 & 1\\
+2 & 1.1 & 1.00488095\\
+3 & 1.15 & 1.014294545\\
+4 & 1.2 & 1.027608696
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As this is a linear equation, we can also find an exact solution for comparison.
+ Let's solve this!
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y'+\frac{1}{x}y=x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using the integrating factor:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(x\right)=e^{\int\frac{1}{x}dx}=e^{\ln\left|x\right|}=\left|x\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But as 
+\begin_inset Formula $x>0$
+\end_inset
+
+ from our initial conditions,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(x\right)=x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\frac{\int x*xdx+C}{x}=\frac{\frac{x^{3}}{3}+C}{x}=\frac{x^{2}}{3}+\frac{C}{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+using the initial condition
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\left(1\right)=1=\frac{1}{3}+\frac{C}{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C=\frac{2}{3}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\frac{x^{2}}{3}+\frac{2}{3x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\left(1.2\right)=\frac{1.2^{2}}{3}+\frac{2}{3*1.2}\approx1.035555555
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So the error is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\text{error}=\left|y_{\text{exact}}-y_{\text{approximation}}\right|=\left|1.035555555-1.027608696\right|\approx0.00794686
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is much more reasonable for a first order approximation (Note, the
+ Jupyter notebook was used to help with these calculations.
+ The code will be shared in Canvas.
+ You could do this by hand, but the decimals are long and the process is
+ a little tedious).
+\end_layout
+
+\end_body
+\end_document

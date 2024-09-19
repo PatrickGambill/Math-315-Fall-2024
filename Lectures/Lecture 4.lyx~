@@ -1,0 +1,384 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 0.4in
+\topmargin 0.75in
+\rightmargin 0.4in
+\bottommargin 0.5in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Lecture 4
+\end_layout
+
+\begin_layout Section*
+Slope Fields
+\end_layout
+
+\begin_layout Standard
+Slope fields give us a method to visualize solutions to differential equations.
+ Suppose we have a differential equation of the form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=f\left(x,y\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then we can plot the slope field by drawing a line segment with a slope
+ of 
+\begin_inset Formula $f\left(x,y\right)$
+\end_inset
+
+ for each point 
+\begin_inset Formula $\left(x,y\right)$
+\end_inset
+
+ in the plane.
+ Some examples are given below:
+\end_layout
+
+\begin_layout Subsection*
+Ex 1)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=x^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/Patrick/Desktop/Teaching/Math 315 Fall 2024/Lectures/Lecture 4/Ex 1a.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we know a point on the solution curve, such as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\left(2\right)=3
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then we can plot this point, and trace an approximation of the curve by
+ following the slope field.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/Patrick/Desktop/Teaching/Math 315 Fall 2024/Lectures/Lecture 4/Ex 1b.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For the remaining examples, we will plot some slope fields and solution
+ curves.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Ex 2)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=x^{2}-y^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/Patrick/Desktop/Teaching/Math 315 Fall 2024/Lectures/Lecture 4/Ex 2.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note the shape of the solution curve may vary depending on the region the
+ curve lies in.
+ This is why we have to be careful to state the interval of validity in
+ our solutions (when we have initial conditions).
+\end_layout
+
+\begin_layout Subsection*
+Ex 3)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=\sin\left(6y\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/Patrick/Desktop/Teaching/Math 315 Fall 2024/Lectures/Lecture 4/Ex 3.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Ex 4)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=e^{xy}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/Patrick/Desktop/Teaching/Math 315 Fall 2024/Lectures/Lecture 4/Ex 4.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Ex 5)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=\ln\left(\left|x+y\right|\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/Patrick/Desktop/Teaching/Math 315 Fall 2024/Lectures/Lecture 4/Ex 5.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here, we have to be a little bit careful.
+ If we choose a point like 
+\begin_inset Formula $y\left(1\right)=-1$
+\end_inset
+
+ where the derivative is undefined, we may not have a solution.
+ This is shown by the yellow dot in the above slope field at 
+\begin_inset Formula $\left(1,-1\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Picard's Theorem of Existence and Uniqueness
+\end_layout
+
+\begin_layout Standard
+We can know when solutions exist with the following theorem:
+\end_layout
+
+\begin_layout Standard
+Consider the differential equation 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=f\left(x,y\right),\ f\left(x_{0}\right)=y_{0}
+\]
+
+\end_inset
+
+If 
+\begin_inset Formula $f\left(x,y\right)$
+\end_inset
+
+ is a continuous function and 
+\begin_inset Formula $\frac{\partial f}{\partial y}$
+\end_inset
+
+ exists and is continuous near 
+\begin_inset Formula $\left(x_{0},y_{0}\right)$
+\end_inset
+
+ then a solution to 
+\begin_inset Formula 
+\[
+\frac{dy}{dx}=f\left(x,y\right),\ f\left(x_{0}\right)=y_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+exists for some interval around 
+\begin_inset Formula $\left(x_{0},y_{0}\right)$
+\end_inset
+
+ and is unique.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Word of Warning:
+\end_layout
+
+\begin_layout Standard
+This only is true for an interval around the point.
+ Any discontinuity in the derivative or in 
+\begin_inset Formula $f\left(x,y\right)$
+\end_inset
+
+ may give multiple solutions over the entirety of 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+.
+ Alternatively, a solution may not exist for all real numbers (especially
+ as 
+\begin_inset Formula $y\left(x\right)$
+\end_inset
+
+ may be undefined for some 
+\begin_inset Formula $x$
+\end_inset
+
+ values).
+\end_layout
+
+\end_body
+\end_document

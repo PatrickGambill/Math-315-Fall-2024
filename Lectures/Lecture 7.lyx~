@@ -1,0 +1,2238 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 0.4in
+\topmargin 0.75in
+\rightmargin 0.4in
+\bottommargin 0.5in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Lecture 7
+\end_layout
+
+\begin_layout Section*
+Substitutions
+\end_layout
+
+\begin_layout Standard
+We will talk about substitutions today.
+ By picking defining a new variable 
+\begin_inset Formula $v$
+\end_inset
+
+ in terms of 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+, we can often take complicated differential equations and simplify them
+ into nicer equations (i.e.
+ linear or separable equations).
+ As with substitution in calculus 
+\begin_inset Formula $2$
+\end_inset
+
+ for integrals, there may be multiple valid substitutions, and some may
+ yield 
+\begin_inset Quotes eld
+\end_inset
+
+easier
+\begin_inset Quotes erd
+\end_inset
+
+ equations to solve than others.
+ Here is a table with some common substitutions.
+ These will not work in all cases, but if you are unsure where to start,
+ these are a good starting point:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{cc}
+\text{If you see} & \text{Try}\\
+yy' & v=y^{2},y^{2}+x^{2},y^{2}-x^{2}\\
+y^{2}y' & v=y^{3}\\
+\cos\left(y\right)y' & v=\sin\left(y\right)\\
+\sin\left(y\right)y' & v=\cos\left(y\right)\\
+e^{y}y' & v=e^{y}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When we work through a substitution, the general process is:
+\end_layout
+
+\begin_layout Enumerate
+Pick a 
+\begin_inset Formula $v$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Find 
+\begin_inset Formula $v'$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Substitute 
+\begin_inset Formula $v$
+\end_inset
+
+ and 
+\begin_inset Formula $v'$
+\end_inset
+
+ into the equation.
+ All of the 
+\begin_inset Formula $y$
+\end_inset
+
+ values should be gone after substituting
+\end_layout
+
+\begin_layout Enumerate
+Solve the equation in terms of 
+\begin_inset Formula $v$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Plug 
+\begin_inset Formula $v$
+\end_inset
+
+ in terms of 
+\begin_inset Formula $y$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Plug in initial conditions and rearrange the implicit solution into an explicit
+ solution (if applicable)
+\end_layout
+
+\begin_layout Subsection*
+Examples
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 1)
+\end_layout
+
+\begin_layout Standard
+Solve
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+yy'+xy^{2}=x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let's make the substitution 
+\begin_inset Formula $v=y^{2}$
+\end_inset
+
+.
+ Then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v'=2yy'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{v'}{2}=yy'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{v'}{2}+xv=x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we can rearrange to get a linear equation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v'+2xv=2x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using integrating factor:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(x\right)=e^{\int2xdx}=e^{x^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v\left(x\right)=\frac{\int e^{x^{2}}*2xdx+C}{e^{x^{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To take the integral, we make a 
+\begin_inset Formula $u$
+\end_inset
+
+-sub
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u=x^{2},du=2xdx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int e^{x^{2}}*2xdx=\int e^{u}du=e^{u}+C=e^{x^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+so
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v\left(x\right)=\frac{e^{x^{2}}+C}{e^{x^{2}}}=1+Ce^{-x^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, we substitute back in terms of 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{2}=1+Ce^{-x^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can leave this as an implicit solution or we can solve for 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\pm\sqrt{1+Ce^{-x^{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 2)
+\end_layout
+
+\begin_layout Standard
+Solve 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+2yy'=e^{y^{2}-x^{2}}+2x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can try 
+\begin_inset Formula $v=y^{2}-x^{2}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $v'=2yy'-2x$
+\end_inset
+
+ so if we rearrange the original equation, we get
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+2yy'-2x=e^{y^{2}-x^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and thus we have the substitution
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v'=e^{v}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we have a separable equation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dv}{dx}=e^{v}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+e^{-v}dv=dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Integrate both sides:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int e^{-v}dv=\int dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=e^{-v}=x+C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+-v=\ln\left(x+C\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v=\ln\left(\frac{1}{x+C}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{2}-x^{2}=\ln\left(\frac{1}{x+C}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{2}=\ln\left(\frac{1}{x+C}\right)+x^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+or if you prefer
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\pm\sqrt{\ln\left(\frac{1}{x+C}\right)+x^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 3)
+\end_layout
+
+\begin_layout Standard
+Solve
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\cos\left(y\right)y'-1=\sin\left(y\right)+2x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This equation is not separable, but if we make a substitution 
+\begin_inset Formula $v=\sin\left(y\right)$
+\end_inset
+
+, we get something nicer.
+ We have 
+\begin_inset Formula $v'=\cos\left(y\right)y'$
+\end_inset
+
+, so if we substitute, we get
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v'-1=v+2x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can rearrange to get a linear equation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v'-v=2x+1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now we can solve using the integrating factor:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(x\right)=e^{\int-1dx}=e^{-x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v=\frac{\int\left(2x+1\right)e^{-x}dx+C}{e^{-x}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To take the integral, we can use integration by parts:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u=2x+1,\ dv=e^{-x}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+du=2dx,\ v=-e^{-x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int\left(2x+1\right)e^{-x}dx=-\left(2x+1\right)e^{-x}+\int2e^{-x}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=-\left(2x+1\right)e^{-x}-2e^{-x}+C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Plugging this back in yields
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v=\frac{-\left(2x+1\right)e^{-x}-2e^{-x}+C}{e^{-x}}=-\left(2x+1\right)-2+Ce^{x}=-2x-3+Ce^{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, we substitute back in terms of 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sin\left(y\right)=-2x-3+Ce^{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\arcsin\left(-2x-3+Ce^{x}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Without initial conditions, we cannot make any constraints on the domain,
+ as these will depend on 
+\begin_inset Formula $C$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Bernoulli Differential Equations
+\end_layout
+
+\begin_layout Standard
+There is a special class of differential equations called, 
+\begin_inset Quotes eld
+\end_inset
+
+ Bernoulli Equations
+\begin_inset Quotes erd
+\end_inset
+
+.
+ These are not to be confused with Bernoulli's Equation for fluids (or one
+ of the many other things called Bernoulli's equation).
+ These are the differential equations of the form:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y'+p\left(x\right)y=q\left(x\right)y^{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $n$
+\end_inset
+
+ can be any real number except 
+\begin_inset Formula $0$
+\end_inset
+
+ or 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ To solve these, we make the substitution 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v=y^{1-n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v'=\left(1-n\right)y^{-n}y'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{v'}{\left(1-n\right)}y^{n}=y'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So if we substitute, we get
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{v'}{\left(1-n\right)}y^{n}+p\left(x\right)y=q\left(x\right)y^{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Divide by 
+\begin_inset Formula $y^{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{v'}{\left(1-n\right)}+p\left(x\right)y^{1-n}=q\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and finally substitute in for 
+\begin_inset Formula $y^{1-n}$
+\end_inset
+
+ and rearrange
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{v'}{\left(1-n\right)}+p\left(x\right)v=q\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v'+\left(1-n\right)p\left(x\right)v=\left(1-n\right)q\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is a linear equation so we can use the integrating factor!
+\end_layout
+
+\begin_layout Subsection*
+Examples
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 4)
+\end_layout
+
+\begin_layout Standard
+Solve
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y'+\cos\left(x\right)y=\cos\left(x\right)y^{5}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We make the substitution
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v=y^{1-5}=y^{-4}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v'=-4y^{-5}y'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{y^{5}}{-4}v'=y'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and now, we substitute:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{y^{5}}{-4}v'+\cos\left(x\right)y=\cos\left(x\right)y^{5}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We multiply both sides by 
+\begin_inset Formula $\frac{-4}{y^{5}}$
+\end_inset
+
+ to yield:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v'+-4\cos\left(x\right)y^{-4}=-4\cos\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But as 
+\begin_inset Formula $y^{-4}=v$
+\end_inset
+
+, this gives
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v'+-4\cos\left(x\right)v=-4\cos\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and now we can use integrating factor:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(x\right)=e^{\int-4\cos\left(x\right)dx}=e^{-4\sin\left(x\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v=\frac{\int e^{-4\sin\left(x\right)}\left(-4\cos\left(x\right)\right)dx+C}{e^{-4\sin\left(x\right)}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And we can solve the integral using a 
+\begin_inset Formula $u$
+\end_inset
+
+-sub.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u=-4\sin\left(x\right),\ du=-4\cos\left(x\right)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int e^{-4\sin\left(x\right)}\left(-4\cos\left(x\right)\right)dx=\int e^{u}du=e^{u}+C=e^{-4\sin\left(x\right)}+C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v=\frac{e^{-4\sin\left(x\right)}+C}{e^{-4\sin\left(x\right)}}=1+Ce^{-4\sin\left(x\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We now substitute back in terms of 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y^{-4}=1+Ce^{-4\sin\left(x\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\pm\frac{1}{\left(1+Ce^{-4\sin\left(x\right)}\right)^{\frac{1}{4}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 5)
+\end_layout
+
+\begin_layout Standard
+Solve 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y'+\frac{1}{x}y=\sqrt{y},\ y\left(1\right)=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As 
+\begin_inset Formula $\sqrt{y}=y^{\frac{1}{2}}$
+\end_inset
+
+, then this is a Bernoulli equation.
+ We can make the substitution
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v=y^{1-\frac{1}{2}}=y^{\frac{1}{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v'=\frac{1}{2}y^{\frac{-1}{2}}y'=\frac{1}{2\sqrt{y}}y'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y'=2\sqrt{y}v'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+2\sqrt{y}v'+\frac{1}{x}y=\sqrt{y}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we divide both sides by 
+\begin_inset Formula $2\sqrt{y}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v'+\frac{1}{2x}\sqrt{y}=\frac{1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and we plug back in 
+\begin_inset Formula $v=\sqrt{y}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v'+\frac{1}{2x}v=\frac{1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we have a linear equation we can solve using integrating factor!
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(x\right)=e^{\int\frac{1}{2x}dx}=e^{\frac{1}{2}\int\frac{1}{x}}=e^{\frac{1}{2}\ln\left|x\right|}=e^{\ln\left|x\right|^{\frac{1}{2}}}=\sqrt{\left|x\right|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As we are assuming 
+\begin_inset Formula $x>0$
+\end_inset
+
+ by the initial condition, we have 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(x\right)=\sqrt{\left|x\right|}=\sqrt{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v\left(x\right)=\frac{\int\frac{\sqrt{x}}{2}dx+C}{\sqrt{x}}=\frac{\frac{x^{\frac{3}{2}}}{3}+C}{\sqrt{x}}=\frac{x}{3}+Cx^{\frac{-1}{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, we substitute back in terms of 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sqrt{y}=\frac{x}{3}+Cx^{\frac{-1}{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And using the initial condition 
+\begin_inset Formula $y\left(1\right)=1$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sqrt{1}=1=\frac{1}{3}+C\left(1\right)^{\frac{-1}{2}}=\frac{1}{3}+C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula $C=\frac{2}{3}$
+\end_inset
+
+ and thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sqrt{y}=\frac{x}{3}+\left(\frac{2}{3}\right)x^{\frac{-1}{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Or 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=\left(\frac{x}{3}+\left(\frac{2}{3}\right)x^{\frac{-1}{2}}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Is our final answer.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Homogeneous Equations
+\end_layout
+
+\begin_layout Standard
+Some differential equations can be written in the form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y'=F\left(\frac{y}{x}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+for some function 
+\begin_inset Formula $F$
+\end_inset
+
+.
+ When this is the case, try the substitution
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v=\frac{y}{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+when making the substitution, we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+xv=y
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{d}{dx}\left(xv\right)=xv'+v=y'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So the equation becomes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+xv'+v=F\left(v\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And as we can rewrite the equation as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+xv'=F\left(v\right)-v
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{v'}{F\left(v\right)-v}=\frac{1}{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The substitution will yield a separable equation to solve in terms of 
+\begin_inset Formula $v$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Examples
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 6)
+\end_layout
+
+\begin_layout Standard
+Solve
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x^{2}y'+3xy=\frac{y^{3}}{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We might have to rearrange to get the equation in the proper form.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x^{2}y'=-3xy+\frac{y^{3}}{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y'=-3\frac{y}{x}+\frac{y^{3}}{x^{3}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we can make the substitution
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v=\frac{y}{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus 
+\begin_inset Formula 
+\[
+xv=y
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+xv'+v=y'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So if we substitute:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+xv'+v=-3v+v^{3}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we can separate:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+xv'=-4v+v^{3}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We bring all of the 
+\begin_inset Formula $v$
+\end_inset
+
+ terms to the left side and all of the 
+\begin_inset Formula $x$
+\end_inset
+
+ terms to the right side:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x\frac{dv}{dx}=v\left(v^{2}-4\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dv}{v\left(v^{2}-4\right)}=\frac{dx}{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we integrate both sides:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int\frac{dv}{v\left(v^{2}-4\right)}=\int\frac{dx}{x}=\ln\left|x\right|+C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For the right side, we will use partial fraction decomposition.
+ The integral is computed below:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int\frac{dv}{v\left(v^{2}-4\right)}=\int\frac{dv}{v\left(v-2\right)\left(v+2\right)}=\int\frac{A}{v}+\frac{B}{v-2}+\frac{C}{v+2}dv
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let's find 
+\begin_inset Formula $A,B,C$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1=A\left(v-2\right)\left(v+2\right)+Bv\left(v+2\right)+Cv\left(v-2\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So if 
+\begin_inset Formula $v=2$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1=B\left(2\right)\left(4\right)=8B
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+B=\frac{1}{8}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $v=0$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1=A\left(-2\right)\left(2\right)=-4A
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A=\frac{-1}{4}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $v=-2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1=C\left(-2\right)\left(-4\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C=\frac{1}{8}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int\frac{A}{v}+\frac{B}{v-2}+\frac{C}{v+2}dv=\int\frac{-1}{4}\frac{1}{v}+\frac{1}{8}\frac{1}{v-2}+\frac{1}{8}\frac{1}{v+2}dv
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=-\frac{1}{4}\ln\left|v\right|+\frac{1}{8}\ln\left|v-2\right|+\frac{1}{8}\ln\left|v+2\right|+C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we can go back to the original substitution to find
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int\frac{dv}{v\left(v^{2}-4\right)}=-\frac{1}{4}\ln\left|v\right|+\frac{1}{8}\ln\left|v-2\right|+\frac{1}{8}\ln\left|v+2\right|=\ln\left|x\right|+C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can multiply both sides by 
+\begin_inset Formula $-8$
+\end_inset
+
+ to simplify 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+2\ln\left|v\right|+\ln\left|v-2\right|+\ln\left|v+2\right|=-8\ln\left|x\right|+C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Combine the logarithms on the left side:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ln\left|\frac{v^{2}}{\left(v-2\right)\left(v+2\right)}\right|=-8\ln\left|x\right|+C=\ln\left|x^{-8}\right|+C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And take 
+\begin_inset Formula $e$
+\end_inset
+
+ to the power of both sides:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+e^{\ln\left|\frac{v^{2}}{\left(v-2\right)\left(v+2\right)}\right|}=e^{\ln\left|x^{-8}\right|+C}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{v^{2}}{\left(v-2\right)\left(v+2\right)}=C\left(x^{-8}\right)=\frac{C}{x^{8}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, we can plug back in 
+\begin_inset Formula $\frac{y}{x}$
+\end_inset
+
+ to get an implicit solution
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\left(\frac{y}{x}\right)^{2}}{\left(\frac{y}{x}-2\right)\left(\frac{y}{x}+2\right)}=\frac{C}{x^{8}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 7)
+\end_layout
+
+\begin_layout Standard
+Solve
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y'-e^{\frac{y}{x}}\left(\frac{x}{y}\right)=\frac{y}{x},\ y\left(1\right)=-\ln\left(2\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can make the substitution 
+\begin_inset Formula 
+\[
+v=\frac{y}{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+xv=y
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+xv'+v=y'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we substitute:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+xv'+v-e^{v}\left(\frac{1}{v}\right)=v
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+xv'=\frac{e^{v}}{v}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we can separate:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x\frac{dv}{dx}=\frac{e^{v}}{v}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{v}{e^{v}}dv=\frac{1}{x}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and integrate:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int\frac{v}{e^{v}}dv=\int\frac{1}{x}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For the left integral, we use integration by parts (we will use 
+\begin_inset Formula $w$
+\end_inset
+
+ rather than 
+\begin_inset Formula $v$
+\end_inset
+
+ in integration by parts to avoid using the same variable name twice):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u=v,\ dw=e^{-v}dv
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+du=dv\ w=-e^{-v}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int\frac{v}{e^{v}}dv=-ve^{-v}+\int e^{-v}dv=-ve^{-v}+-e^{-v}+C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int\frac{v}{e^{v}}dv=\int\frac{1}{x}dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Gives 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+-ve^{-v}+-e^{-v}=\ln\left|x\right|+C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we plug back in terms of 
+\begin_inset Formula $y$
+\end_inset
+
+ and 
+\begin_inset Formula $x$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+-\left(\frac{y}{x}\right)e^{-\left(\frac{y}{x}\right)}-e^{-\frac{y}{x}}=\ln\left|x\right|+C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As our initial conditions specify 
+\begin_inset Formula $x>0$
+\end_inset
+
+, then we are okay to drop the asolute value in the natural log.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+-\left(\frac{y}{x}\right)e^{-\left(\frac{y}{x}\right)}-e^{-\frac{y}{x}}=\ln x+C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now, we can plug in the initial conditions:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+-\frac{-\ln\left(2\right)}{1}e^{-\left(\frac{-\ln\left(2\right)}{1}\right)}-e^{-\left(\frac{-\ln\left(2\right)}{1}\right)}=\ln\left(1\right)+C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ln\left(2\right)e^{\ln\left(2\right)}-e^{\ln\left(2\right)}=C
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C=2\ln\left(2\right)-2
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+-\left(\frac{y}{x}\right)e^{-\left(\frac{y}{x}\right)}-e^{-\frac{y}{x}}=\ln x+2\ln\left(2\right)-2
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with 
+\begin_inset Formula $x>0$
+\end_inset
+
+ is our solution.
+\end_layout
+
+\end_body
+\end_document

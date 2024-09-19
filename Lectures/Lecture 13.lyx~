@@ -1,0 +1,934 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 0.4in
+\topmargin 0.75in
+\rightmargin 0.4in
+\bottommargin 0.5in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Lecture 13
+\end_layout
+
+\begin_layout Standard
+We are a little bit ahead of schedule, so we will take an aside to learn
+ about operators.
+ This will help us prove concepts for higher order linear ODEs.
+ We are not testing over operators, but it is still good to know as they
+ will appear in later courses (such as PDEs, Quantum Mechanics, Electromagnetism
+, ect.).
+ 
+\end_layout
+
+\begin_layout Section*
+Operators
+\end_layout
+
+\begin_layout Subsection*
+Definition
+\end_layout
+
+\begin_layout Standard
+Informally, an operator 
+\begin_inset Formula $L$
+\end_inset
+
+ takes a real (differentiable) function and outputs a real function.
+ In general, the functions need not be differentiable, but we will assume
+ they are in this course.
+ In general, operators need not commute.
+ Here are some examples of operators:
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 1
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L=\frac{d}{dx}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The derivative is an operator, since it takes any differentiable real function
+ and outputs its derivative
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(f\right)\left(x\right)=\frac{df}{dx}\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 2
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(f\right)\left(x\right)=\int_{0}^{x}f\left(t\right)dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The integral in this form is an operator, since it takes any real differentiable
+ function and outputs it's integral (technically all integrable functions
+ could be used as inputs).
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 3
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(f\right)=f
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is the identity operator.
+ It takes a function and outputs the same function.
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 4
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L=3
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is an operator as we can take the input function 
+\begin_inset Formula $f$
+\end_inset
+
+ and return another function 
+\begin_inset Formula $3f$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Lf=3f
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In some sense, operators generalize real functions.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Definition
+\end_layout
+
+\begin_layout Standard
+An operator 
+\begin_inset Formula $L$
+\end_inset
+
+ is said to be a linear operator if for all functions 
+\begin_inset Formula $f,g$
+\end_inset
+
+ it 
+\begin_inset Quotes eld
+\end_inset
+
+operates
+\begin_inset Quotes erd
+\end_inset
+
+ on and for any real constant 
+\begin_inset Formula $C$
+\end_inset
+
+, we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(Cf\right)=CL\left(f\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(f+g\right)=L\left(f\right)+L\left(g\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 1
+\end_layout
+
+\begin_layout Standard
+Our first operator
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L=\frac{d}{dx}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+is linear as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(Cf\right)=\frac{d}{dx}\left(Cf\right)=C\frac{d}{dx}f=CL\left(f\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(f+g\right)=\frac{d}{dx}\left(f+g\right)=\frac{d}{dx}f+\frac{d}{dx}g=L\left(f\right)+L\left(g\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These properties are assumed from calculus 1, but they could also be shown
+ from the limit definition of the derivative (I showed these using the other
+ limit definition in lecture.
+ The proofs are very similar).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(Cf\right)\left(x\right)=\frac{d}{dx}\left(Cf\right)\left(x\right)=\lim_{h\rightarrow0}\frac{Cf\left(x+h\right)-Cf\left(x\right)}{h}=\lim_{h\rightarrow0}\frac{C\left(f\left(x+h\right)-f\left(x\right)\right)}{h}=C\lim_{h\rightarrow0}\frac{\left(f\left(x+h\right)-f\left(x\right)\right)}{h}=C\frac{d}{dx}\left(f\right)\left(x\right)=CL\left(f\right)\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(f+g\right)\left(x\right)=\frac{d}{dx}\left(f+g\right)\left(x\right)=\lim_{h\rightarrow0}\frac{f\left(x+h\right)+g\left(x+h\right)-f\left(x\right)-g\left(x\right)}{h}=\lim_{h\rightarrow0}\frac{f\left(x+h\right)-f\left(x\right)}{h}+\frac{g\left(x+h\right)-g\left(x\right)}{h}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\lim_{h\rightarrow0}\frac{f\left(x+h\right)-f\left(x\right)}{h}+\lim_{h\rightarrow0}\frac{g\left(x+h\right)-g\left(x\right)}{h}=\frac{d}{dx}\left(f\right)\left(x\right)+\frac{d}{dx}\left(g\right)\left(x\right)=L\left(f\right)\left(x\right)+L\left(g\right)\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 2
+\end_layout
+
+\begin_layout Standard
+The second operator we saw
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(f\right)\left(x\right)=\int_{0}^{x}f\left(t\right)dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+is also linear.
+ As 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(Cf\right)\left(x\right)=\int_{0}^{x}Cf\left(t\right)dt=C\int_{0}^{x}f\left(t\right)dt=CL\left(f\right)\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(f+g\right)\left(x\right)=\int_{0}^{x}f\left(t\right)+g\left(t\right)dt=\int_{0}^{x}f\left(t\right)dt+\int_{0}^{x}g\left(t\right)dt=L\left(f\right)\left(x\right)+L\left(g\right)\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ex 3
+\end_layout
+
+\begin_layout Standard
+The identity operator
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(f\right)=f
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+is linear as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(Cf\right)=Cf=CL\left(f\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(f+g\right)=f+g=L\left(f\right)+L\left(g\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Non Ex 4
+\end_layout
+
+\begin_layout Standard
+The fourth operator we saw 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(f\right)=3
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+is not linear as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(Cf\right)=3\neq C*3=CL\left(f\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+for arbitrary real 
+\begin_inset Formula $C$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Properties
+\end_layout
+
+\begin_layout Standard
+Now, we can show some useful properties of linear operators.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Property 1
+\end_layout
+
+\begin_layout Standard
+If you apply a linear operator to itself multiple times, the result is still
+ a linear operator.
+ Suppose 
+\begin_inset Formula $L$
+\end_inset
+
+ is a linear operator.
+ Then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(L\left(Cf\right)\right)=L\left(CL\left(f\right)\right)=C\left(L\left(L\left(f\right)\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(L\left(f+g\right)\right)=L\left(L\left(f\right)+L\left(g\right)\right)=L\left(L\left(f\right)\right)+L\left(L\left(g\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In general, we use 
+\begin_inset Formula $L^{n}\left(f\right)$
+\end_inset
+
+ to be the linear operator applied to itself 
+\begin_inset Formula $n$
+\end_inset
+
+ times.
+ This is analogous to 
+\begin_inset Formula $f^{\left(n\right)}\left(x\right)$
+\end_inset
+
+ being used as the 
+\begin_inset Formula $n$
+\end_inset
+
+th derivative of 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ This implies that repeated differentiation is linear.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Property 2
+\end_layout
+
+\begin_layout Standard
+The sum of linear operators is still linear.
+ Suppose 
+\begin_inset Formula $L_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $L_{2}$
+\end_inset
+
+ are linear operators.
+ Then if 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(L_{1}+L_{2}\right)\left(f\right)=L_{1}\left(f\right)+L_{2}\left(f\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(L_{1}+L_{2}\right)\left(Cf\right)=L_{1}\left(Cf\right)+L_{2}\left(Cf\right)=C\left(L_{1}\left(f\right)+L_{2}\left(f\right)\right)=C\left(L_{1}+L_{2}\right)\left(f\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(L_{1}+L_{2}\right)\left(f+g\right)=L_{1}\left(f+g\right)+L_{2}\left(f+g\right)=L_{1}\left(f\right)+L_{1}\left(g\right)+L_{2}\left(f\right)+L_{2}\left(g\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=L_{1}\left(f\right)+L_{2}\left(f\right)+L_{1}\left(g\right)+L_{2}\left(g\right)=\left(L_{1}+L_{2}\right)\left(f\right)+\left(L_{1}+L_{2}\right)\left(g\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Property 3
+\end_layout
+
+\begin_layout Standard
+If we multiply a linear operator by a function, this still gives a linear
+ operator.
+ Suppose 
+\begin_inset Formula $L$
+\end_inset
+
+ is a linear operator and 
+\begin_inset Formula $h\left(x\right)$
+\end_inset
+
+ is an arbitrary function of 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Then if 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(hL\right)\left(f\right)=hL\left(f\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(hL\right)\left(Cf\right)=hCL\left(f\right)=ChL\left(f\right)=C\left(hL\right)\left(f\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(hL\right)\left(f+g\right)=hL\left(f+g\right)=h\left(L\left(f\right)+L\left(g\right)\right)=hL\left(f\right)+hL\left(g\right)=\left(hL\right)\left(f\right)+\left(hL\right)\left(g\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Higher Order Linear ODEs
+\end_layout
+
+\begin_layout Standard
+These linear operators give us a concise way of writing linear ODEs.
+ Suppose you have a linear ODE of order 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ That is an ODE of the following form:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{i=0}^{n}f_{i}\left(x\right)y^{\left(i\right)}\left(x\right)=h\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+for some real functions 
+\begin_inset Formula $f_{i}\left(x\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $h\left(x\right)$
+\end_inset
+
+.
+ We can instead write this as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(y\right)\left(x\right)=h\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(y\right)\left(x\right)=\sum_{i=0}^{n}f_{i}\left(x\right)y^{\left(i\right)}\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This gives us a tool for proving some properties about higher order linear
+ ODEs.
+ First, let's prove superposition.
+\end_layout
+
+\begin_layout Subsubsection*
+Superposition
+\end_layout
+
+\begin_layout Standard
+Suppose 
+\begin_inset Formula $y_{1},y_{2},\dots,y_{n}$
+\end_inset
+
+ are all solutions to a linear homogeneous ODE.
+ Then so is 
+\begin_inset Formula $y=\sum_{i=1}^{n}C_{i}y_{i}$
+\end_inset
+
+.
+ We can always take linear combinations of solutions to the ODE and get
+ a solution to the ODE.
+ To prove this, suppose the linear homogeneous ODE is of the form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(y\right)\left(x\right)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+for some linear operator 
+\begin_inset Formula $L$
+\end_inset
+
+.
+ Then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(y\right)\left(x\right)=L\left(\sum_{i=1}^{n}C_{i}y_{i}\right)\left(x\right)=\sum_{i=1}^{n}L\left(C_{i}y_{i}\right)\left(x\right)=\sum_{i=1}^{n}C_{i}L\left(y_{i}\right)\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+but as each 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ is a solution to the linear homogeneous ODE, then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(y_{i}\right)\left(x\right)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{i=1}^{n}C_{i}L\left(y_{i}\right)\left(x\right)=\sum_{i=1}^{n}C_{i}\left(0\right)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and thus the superposition of solutions is still a solution.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Existence and Uniqueness
+\end_layout
+
+\begin_layout Standard
+Without proof, we also have an existence and uniqueness theorem for higher
+ order linear ODEs.
+ If we have the linear ODE
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{i=0}^{n}f_{i}\left(x\right)y^{\left(i\right)}\left(x\right)=h\left(x\right),\ y^{\left(i\right)}\left(x_{0}\right)=b_{i}\ 0\leq i\leq n-1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and if 
+\begin_inset Formula $f_{i}\left(x\right),h\left(x\right)$
+\end_inset
+
+ are all continuous on some open interval 
+\begin_inset Formula $I$
+\end_inset
+
+ containing 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+, then a unique solution to the differential equation exists on 
+\begin_inset Formula $I$
+\end_inset
+
+.
+ Next lecture, we will talk about solving constant coefficient higher order
+ linear ODEs.
+ 
+\end_layout
+
+\end_body
+\end_document
